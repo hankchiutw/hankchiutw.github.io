@@ -2,7 +2,7 @@ excerpt_separator: ""
 pygments: true
 markdown: kramdown
 url: http://hankchiutw.github.io
-title: Hank Chiu
-tagline: A log of everyday life
-description: Web developer/architect
+title: hankchiu.tw
+tagline: Web developer/architect
+description: A Network Generation
 paginate: 5
