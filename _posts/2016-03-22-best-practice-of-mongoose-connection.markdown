@@ -25,9 +25,9 @@ var mongoose = require('mongoose');
 mongoose
     .connect('mongodb://localhost/my_database')
     .connection
-    .once('open', function(){ // open })
-    .on('disconnected', function(){ // disconnected })
-    .on('error', function(){ // error });
+    .once('open', function(){ /** open */ })
+    .on('disconnected', function(){ /** disconnected */ })
+    .on('error', function(){ /** error */ });
 ```
 
 ** Better **
@@ -38,8 +38,8 @@ Avoid latency when setting up event listener to capture events.
 var mongoose = require('mongoose');
 mongoose
     .connection
-    .once('open', function(){ // open })
-    .on('disconnected', function(){ // disconnected })
-    .on('error', function(){ // error });
+    .once('open', function(){ /** open */ })
+    .on('disconnected', function(){ /** disconnected */ })
+    .on('error', function(){ /** error */ });
 mongoose.connect('mongodb://localhost/my_database');
 ```
