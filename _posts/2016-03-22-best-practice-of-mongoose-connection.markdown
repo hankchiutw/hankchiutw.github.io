@@ -30,7 +30,7 @@ mongoose
     .on('error', function(){ /** error */ });
 ```
 
-** Better **
+**Better**
 
 Avoid latency when setting up event listener to capture events.
 
