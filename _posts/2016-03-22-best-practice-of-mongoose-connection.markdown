@@ -34,7 +34,7 @@ mongoose
 
 Avoid latency when setting up event listener to capture events.
 
-```
+```javascript
 var mongoose = require('mongoose');
 mongoose
     .connection
