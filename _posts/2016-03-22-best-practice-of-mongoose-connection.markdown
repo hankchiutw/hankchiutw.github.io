@@ -20,7 +20,7 @@ Read through the [overview](https://github.com/Automattic/mongoose) on mongoose'
 
 ### Code example
 
-```
+```javascript
 var mongoose = require('mongoose');
 mongoose
     .connect('mongodb://localhost/my_database')
@@ -31,7 +31,9 @@ mongoose
 ```
 
 ** Better **
+
 Avoid latency when setting up event listener to capture events.
+
 ```
 var mongoose = require('mongoose');
 mongoose
