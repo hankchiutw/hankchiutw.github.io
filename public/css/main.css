@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .sidebar-item{
     padding: 20px;
@@ -19,4 +20,11 @@
 
 .sidebar-item .welcome span{
     vertical-align: middle;
+=======
+@import url(https://fonts.googleapis.com/css?family=Cuprum);
+html,
+h1, h2, h3, h4, h5, h6,
+.sidebar {
+  font-family: 'Cuprum', sans-serif;
+>>>>>>> 93f5d465de23fc8aa1ee3e4cd97ab4408ee7e057
 }
