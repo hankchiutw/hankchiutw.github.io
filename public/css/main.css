@@ -26,3 +26,11 @@
 .sidebar-item .welcome span{
     vertical-align: middle;
 }
+
+.page .title{
+    font-size: 24px;
+}
+
+.page .note{
+    font-size: 18px;
+}
