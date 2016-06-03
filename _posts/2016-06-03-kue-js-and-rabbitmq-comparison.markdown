@@ -16,6 +16,7 @@ For [message queue](https://en.wikipedia.org/wiki/Message_queue).
 
 # RabbitMQ
 - RPC style
+- Persistent message data and logs
 - [Web messaging](https://www.rabbitmq.com/devtools.html#web-messaging)
   - [sockjs-client](https://github.com/sockjs/sockjs-client)
   - [Web STOMP RabbitMQ plugin](https://www.rabbitmq.com/web-stomp.html)
