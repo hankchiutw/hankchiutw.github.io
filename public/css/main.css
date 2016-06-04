@@ -34,3 +34,9 @@
 .page .note{
     font-size: 18px;
 }
+
+.page .subtitle{
+    font-size: 18px;
+    color: #aaaaaa;
+    margin: 0;
+}
