@@ -6,6 +6,8 @@ layout: myWorks
 ## [socket.io-handler](https://github.com/hankchiutw/socket.io-handler) [![npm version](https://badge.fury.io/js/socket.io-handler.svg)](https://badge.fury.io/js/socket.io-handler)
 > Simple library to setup socket.io with express.js(boot, add event handlers, etc)
 
+## [socket.io-terminal](https://github.com/hankchiutw/socket.io-terminal)
+> Demonstrate socket.io usage
 
 ## [mongoose-extend](https://github.com/hankchiutw/mongoose-extend) [![npm version](https://badge.fury.io/js/mongoose-extend.svg)](https://badge.fury.io/js/mongoose-extend)
 > Extended mongoose module with handy functionalities
