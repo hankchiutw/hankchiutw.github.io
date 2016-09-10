@@ -1,0 +1,22 @@
+{
+  "name": "hankchiutw.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "jekyll serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankchiutw/hankchiutw.github.io.git"
+  },
+  "keywords": [
+    "jekyll"
+  ],
+  "author": "Hank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hankchiutw/hankchiutw.github.io/issues"
+  },
+  "homepage": "https://github.com/hankchiutw/hankchiutw.github.io#readme"
+}
