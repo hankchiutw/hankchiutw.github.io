@@ -18,6 +18,9 @@ layout: page
 
 # Demostrations and utilities
 
+## [angular-webpack-demo](https://hankchiutw.github.io/angular-webpack-demo)
+> Simple SPA(single page application) using angular.js and webpack. [Source code](https://github.com/hankchiutw/angular-webpack-demo).
+
 ## [socket.io-terminal](https://github.com/hankchiutw/socket.io-terminal)
 > Demonstrate socket.io usage
 
