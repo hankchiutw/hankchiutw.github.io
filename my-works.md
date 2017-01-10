@@ -18,6 +18,9 @@ layout: page
 
 # Demostrations and utilities
 
+## [react-redux-webpack-template](https://hankchiutw.github.io/react-redux-webpack-template)
+> Simple SPA(single page application) using react, redux and webpack. [Source code](https://github.com/hankchiutw/react-redux-webpack-template).
+
 ## [angular-react-webpack-template](https://hankchiutw.github.io/angular-react-webpack-template)
 > Simple SPA(single page application) using angular.js, react and webpack. [Source code](https://github.com/hankchiutw/angular-react-webpack-template).
 
