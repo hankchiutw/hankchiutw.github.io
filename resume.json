@@ -2,7 +2,7 @@
     "basics": {
         "name": "Hank Chiu",
         "label": "Software Engineer, front-end pro with back-end experiences",
-        "summary": "### Have a deep understanding of native JavaScript plus mainstream framework experiences, including Angular.js, React.js, and Express.js.\nExperienced in various parts of IT domain, including hardware engineering, software development, system administration. Keep following present-day web\/mobile\/network\/open source technologies and be passionate about it!\n*Remote working jobs are highly welcome.*",
+        "summary": "### Have a deep understanding of native JavaScript plus mainstream framework experiences, including Angular, React.js, and Express.js.\nExperienced in various parts of IT domain, including hardware engineering, software development, system administration. Keep following present-day web\/mobile\/network\/open source technologies and be passionate about it!\n*Remote working jobs are highly welcome.*",
         "location": {
             "postalCode": "886",
             "countryCode": "TW"
@@ -82,16 +82,19 @@
             "name": "Node.js"
         },
         {
+          "name": "AngularJS"
+        },
+        {
+          "name": "HTML5"
+        },
+        {
+          "name": "CSS3"
+        },
+        {
+          "name": "Express.js"
+        },
+        {
             "name": "Linux System Administration"
-        },
-        {
-            "name": "Programming"
-        },
-        {
-            "name": "Electrical Engineering"
-        },
-        {
-            "name": "Software Development"
         },
         {
             "name": "Amazon Web Services (AWS)"
@@ -100,34 +103,10 @@
             "name": "Linux"
         },
         {
-            "name": "AngularJS"
-        },
-        {
             "name": "MongoDB"
         },
         {
-            "name": "HTML5"
-        },
-        {
             "name": "Git"
-        },
-        {
-            "name": "Bash"
-        },
-        {
-            "name": "Computer Hardware"
-        },
-        {
-            "name": "MySQL"
-        },
-        {
-            "name": "Express.js"
-        },
-        {
-            "name": "CSS3"
-        },
-        {
-            "name": "Integrated Circuit Design"
         }
     ],
     "languages": [
