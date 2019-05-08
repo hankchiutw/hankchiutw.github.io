@@ -1,27 +1,73 @@
-import { LitElement, html } from 'lit-element'
-import { Icon } from '@material/mwc-icon'
+import { LitElement, html, css, unsafeCSS } from 'lit-element'
+import './components/nav-bar.js'
+import './components/profile-card.js'
+import headerImgURL from './header.jpg'
+import protraitImgURL from './portrait.jpg'
 
-console.log('Icon:', Icon)
+class AppRoot extends LitElement {
+  static get styles() {
+    return css`
+    :host {
+      width: 100%;
+      height: 100%;
+      background-color: #efefef;
+      display: block;
+    }
 
-class MyElement extends LitElement {
-  /**
-   * Implement `render` to define a template for your element.
-   *
-   * You must provide an implementation of `render` for any element
-   * that uses LitElement as a base class.
-   */
+    :host:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 515px;
+      background-image: url(${unsafeCSS(headerImgURL)});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    :host:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 515px;
+      background-color: rgba(44, 51, 64, 0.8);
+    }
+
+    nav-bar {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding-top: 40px;
+    }
+    `
+  }
+
   render() {
-    /**
-     * `render` must return a lit-html `TemplateResult`.
-     *
-     * To create a `TemplateResult`, tag a JavaScript template literal
-     * with the `html` helper function:
-     */
     return html`
-      <!-- template content -->
-      <p>A paragraph</p>
+    <nav-bar></nav-bar>
+    <div class='container'>
+      <section>
+        <profile-card .imgURL='${protraitImgURL}'></profile-card>
+      </section>
+    </div>
     `
   }
 }
 // Register the new element with the browser.
-customElements.define('my-element', MyElement)
+customElements.define('app-root', AppRoot)
