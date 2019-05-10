@@ -1,12 +1,10 @@
 import { document, console } from 'global'
 import { storiesOf } from '@storybook/html'
+import '../src/components/profile-card.js'
+import resumeJSON from '../src/resume.json'
 
-storiesOf('Demo', module)
-  .add('heading', () => '<h1>Hello World</h1>')
-  .add('button', () => {
-    const button = document.createElement('button')
-    button.type = 'button'
-    button.innerText = 'Hello Button'
-    button.addEventListener('click', e => console.log(e))
-    return button
+storiesOf('Basic', module)
+  .add('profile-card', () => {
+    console.log('resumeJSON:', resumeJSON)
+    return `<profile-card resumejson='${JSON.stringify(resumeJSON)}'></profile-card>`
   })
