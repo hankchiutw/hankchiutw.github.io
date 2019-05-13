@@ -41,20 +41,24 @@ class ProfileCard extends LitElement {
     .profile__content__title {
       font-size: 36px;
       font-weight: 300;
+      color: var(--main-font-color);
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--seporator-color);
     }
 
     .profile__content:before {
       content: 'HELLO';
-      color: #fff;
+      color: var(--white);
       font-size: 14px;
       font-weight: 700;
       padding: 7px 12px;
-      background-color: #27a79a;
+      background-color: var(--main-bg-color);
     }
 
     .profile__content__title:before {
       content: '';
-      border-left: solid 8px #27a79a;
+      border-left: solid 8px var(--main-bg-color);
       border-bottom: solid 8px transparent;
       display: block;
       height: 7px;
@@ -72,7 +76,7 @@ class ProfileCard extends LitElement {
     }
 
     .profile-social {
-      background-color: #27a79a;
+      background-color: var(--main-bg-color);
       padding: 15px 0;
     }
     `
@@ -91,8 +95,10 @@ class ProfileCard extends LitElement {
     <div class='profile'>
       <div class='profile__portrait'><img src='${this.imgURL}' /></div>
       <div class='profile__content'>
-        <div class='profile__content__title'>I'm <span>${name}</span></div>
-        <div class='profile__content__label'>${label}</div>
+        <div class='profile__content__title'>
+          I'm <span>${name}</span>
+          <div class='profile__content__label'>${label}</div>
+        </div>
       </div>
     </div>
     <div class='profile-social'>profile social</div>

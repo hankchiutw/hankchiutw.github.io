@@ -7,7 +7,7 @@
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s src -p 6006",
     "build-storybook": "build-storybook"
   },
   "keywords": [

@@ -1,0 +1,15 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-color: #27a79a;
+  --main-font-color: #3d4451;
+  --light-font-color: #9da0a7;
+  --white: #ffffff;
+  --black: #000000;
+  --seporator-color: #dedede;
+}
