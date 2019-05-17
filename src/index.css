@@ -13,3 +13,14 @@ html, body {
   --black: #000000;
   --seporator-color: #dedede;
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./fonts/icomoon.eot?5rnfv6');
+  src:  url('./fonts/icomoon.eot?5rnfv6#iefix') format('embedded-opentype'),
+  url('./fonts/icomoon.ttf?5rnfv6') format('truetype'),
+  url('./fonts/icomoon.woff?5rnfv6') format('woff'),
+  url('./fonts/icomoon.svg?5rnfv6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

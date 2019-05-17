@@ -1,4 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element'
+import './components/icon-font.js'
 import './components/nav-bar.js'
 import './components/profile-card.js'
 import headerImgURL from './header.jpg'

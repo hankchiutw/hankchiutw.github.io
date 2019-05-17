@@ -75,6 +75,22 @@ class ProfileCard extends LitElement {
       font-weight: 400;
     }
 
+    .row {
+      margin-bottom: 13px;
+      display: flex;
+    }
+
+    .sub-title {
+      font-size: 12px;
+      font-weight: 700;
+      min-width: 120px;
+      text-transform: uppercase;
+    }
+
+    .light-text {
+      color: var(--light-font-color);
+    }
+
     .profile-social {
       background-color: var(--main-bg-color);
       padding: 15px 0;
@@ -88,8 +104,20 @@ class ProfileCard extends LitElement {
   }
 
   render() {
-    const { basics } = this.resumeJSON
-    const { name, label } = basics || {}
+    const { basics, work } = this.resumeJSON
+    const { name, label, location, email } = basics || {}
+    const { postalCode, countryCode } = location || {}
+    const { company, position } = work[0]
+
+    const infos = Object.entries({
+      location: `${countryCode}, ${postalCode}`,
+      'e-mail': email,
+      current: `${position}, ${company}`
+    }).map(([key, value]) => {
+      return html`<div class='row'>
+        <span class='sub-title'>${key}</span><span class='light-text'>${value}</span>
+      </div>`
+    })
 
     return html`
     <div class='profile'>
@@ -99,9 +127,12 @@ class ProfileCard extends LitElement {
           I'm <span>${name}</span>
           <div class='profile__content__label'>${label}</div>
         </div>
+        <div class='profile__content__info'>${infos}</div>
       </div>
     </div>
-    <div class='profile-social'>profile social</div>
+    <div class='profile-social'>
+      <icon-font icon='github'></icon-font>
+    </div>
     `
   }
 }
