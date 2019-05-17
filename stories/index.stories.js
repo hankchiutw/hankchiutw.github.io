@@ -1,7 +1,7 @@
 import { document, console } from 'global'
 import { storiesOf } from '@storybook/html'
 import '../src/components/profile-card.js'
-import resumeJSON from '../src/resume.json'
+import resumeJSON from '../src/assets/resume.json'
 
 storiesOf('Basic', module)
   .add('profile-card', () => {
