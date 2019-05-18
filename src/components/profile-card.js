@@ -13,7 +13,7 @@ class ProfileCard extends LitElement {
   }
 
   static get styles() {
-    return css`
+    const host = css`
       :host {
         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
         display: block;
@@ -33,13 +33,15 @@ class ProfileCard extends LitElement {
       .profile__portrait img {
         width: 100%;
       }
+    `
 
+    const content = css`
       .profile__content {
         flex: 7;
         padding: 0 15px;
       }
 
-      .profile__content__title {
+      .profile__title {
         font-size: 36px;
         font-weight: 300;
         color: var(--main-font-color);
@@ -57,7 +59,7 @@ class ProfileCard extends LitElement {
         background-color: var(--main-bg-color);
       }
 
-      .profile__content__title:before {
+      .profile__title:before {
         content: "";
         border-left: solid 8px var(--main-bg-color);
         border-bottom: solid 8px transparent;
@@ -67,31 +69,33 @@ class ProfileCard extends LitElement {
         margin-bottom: 18px;
       }
 
-      .profile__content__title span {
+      .profile__title span {
         font-weight: 700;
       }
 
-      .profile__content__label {
+      .profile__label {
         font-size: 18px;
         font-weight: 400;
       }
 
-      .row {
+      .profile__row {
         margin-bottom: 13px;
         display: flex;
       }
 
-      .sub-title {
+      .profile__sub-title {
         font-size: 12px;
         font-weight: 700;
         min-width: 120px;
         text-transform: uppercase;
       }
 
-      .light-text {
+      .profile__sub-label {
         color: var(--light-font-color);
       }
+    `
 
+    const social = css`
       .profile-social {
         background-color: var(--main-bg-color);
         padding: 15px 0;
@@ -114,6 +118,12 @@ class ProfileCard extends LitElement {
         background-color: rgba(0, 0, 0, 0.1);
       }
     `
+
+    return [
+      host,
+      content,
+      social,
+    ]
   }
 
   constructor() {
@@ -133,9 +143,9 @@ class ProfileCard extends LitElement {
       current: `${position}, ${company}`,
     }).map(([key, value]) => {
       return html`
-        <div class="row">
-          <span class="sub-title">${key}</span
-          ><span class="light-text">${value}</span>
+        <div class="profile__row">
+          <span class="profile__sub-title">${key}</span
+          ><span class="profile__sub-label">${value}</span>
         </div>
       `
     })
@@ -152,11 +162,11 @@ class ProfileCard extends LitElement {
       <div class="profile">
         <div class="profile__portrait"><img src="${this.imgURL}" /></div>
         <div class="profile__content">
-          <div class="profile__content__title">
+          <div class="profile__title">
             I'm <span>${name}</span>
-            <div class="profile__content__label">${label}</div>
+            <div class="profile__label">${label}</div>
           </div>
-          <div class="profile__content__info">${infos}</div>
+          <div class="profile__info">${infos}</div>
         </div>
       </div>
       <div class="profile-social">
