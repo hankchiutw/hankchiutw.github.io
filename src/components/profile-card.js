@@ -95,6 +95,23 @@ class ProfileCard extends LitElement {
       .profile-social {
         background-color: var(--main-bg-color);
         padding: 15px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .profile-social__icon {
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        margin: 5px 15px;
+        color: var(--white);
+        border-radius: 50%;
+        transition: background-color 0.25s linear 0s;
+      }
+
+      .profile-social__icon:hover {
+        background-color: rgba(0, 0, 0, 0.1);
       }
     `
   }
@@ -106,7 +123,7 @@ class ProfileCard extends LitElement {
 
   render() {
     const { basics, work } = this.resumeJSON
-    const { name, label, location, email } = basics || {}
+    const { name, label, location, email, profiles } = basics || {}
     const { postalCode, countryCode } = location || {}
     const { company, position } = work[0]
 
@@ -123,6 +140,14 @@ class ProfileCard extends LitElement {
       `
     })
 
+    const profileIcons = profiles.map(({ network, url }) => {
+      return html`
+        <a href="${url}" target="_blank" class="profile-social__icon"
+          ><icon-font icon="${network}"></icon-font
+        ></a>
+      `
+    })
+
     return html`
       <div class="profile">
         <div class="profile__portrait"><img src="${this.imgURL}" /></div>
@@ -134,7 +159,9 @@ class ProfileCard extends LitElement {
           <div class="profile__content__info">${infos}</div>
         </div>
       </div>
-      <div class="profile-social"><icon-font icon="github"></icon-font></div>
+      <div class="profile-social">
+        ${profileIcons}
+      </div>
     `
   }
 }

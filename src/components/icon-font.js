@@ -11,16 +11,23 @@ class IconFont extends LitElement {
     return css`
     :host {
       font-family: 'icomoon' !important;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    [class^='icon-'] {
+      margin: auto;
     }
 
     .icon-github:before {
       content: "\\eab0";
     }
     .icon-linkedin:before {
-      content: "\\eac9";
+      content: "\\eaca";
     }
     .icon-linkedin2:before {
-      content: "\\eaca";
+      content: "\\eac9";
     }
     .icon-stackoverflow:before {
       content: "\\ead0";
@@ -30,7 +37,7 @@ class IconFont extends LitElement {
 
   render() {
     return html`
-    <span class='icon-${this.icon}'></span>
+    <div class='icon-${this.icon}'></div>
     `
   }
 }
