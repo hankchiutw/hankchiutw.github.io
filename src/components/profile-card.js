@@ -4,11 +4,8 @@ import './icon-font.js'
 class ProfileCard extends LitElement {
   static get properties() {
     return {
+      resumeJSON: { type: Object },
       imgURL: String,
-      resumeJSON: {
-        type: Object,
-        attribute: true,
-      },
     }
   }
 
@@ -132,7 +129,7 @@ class ProfileCard extends LitElement {
   }
 
   render() {
-    const { basics, work } = this.resumeJSON
+    const { basics, work } = this.resumeJSON || {}
     const { name, label, location, email, profiles } = basics || {}
     const { postalCode, countryCode } = location || {}
     const { company, position } = work[0]

@@ -1,8 +1,5 @@
-import { LitElement, html, css, unsafeCSS } from 'lit-element'
-
-import headerImgURL from '../assets/header.jpg'
-import protraitImgURL from '../assets/portrait.jpg'
-import resumeJSON from '../assets/resume.json'
+import { LitElement, html, css } from 'lit-element'
+import resumeJSON from '../../assets/resume.json'
 
 class AppRoot extends LitElement {
   static get styles() {
@@ -21,7 +18,7 @@ class AppRoot extends LitElement {
         left: 0;
         right: 0;
         height: 515px;
-        background-image: url(${unsafeCSS(headerImgURL)});
+        background-image: url(assets/header.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -64,8 +61,8 @@ class AppRoot extends LitElement {
       <div class="container">
         <section>
           <profile-card
-            .imgURL="${protraitImgURL}"
-            .resumeJSON="${resumeJSON}"
+            imgurl='assets/portrait.jpg'
+            .resumeJSON='${resumeJSON}'
           ></profile-card>
         </section>
       </div>

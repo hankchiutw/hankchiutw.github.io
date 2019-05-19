@@ -4,10 +4,9 @@
   "description": "Hank Chiu's website",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -s src -p 6006",
+    "start": "concurrently 'parcel src/index.js --public-url ./' 'serve'",
+    "build": "parcel build src/index.js",
+    "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook"
   },
   "keywords": [
@@ -24,14 +23,15 @@
     "> 5%"
   ],
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/html": "^5.0.11",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.20.1",
-    "@storybook/html": "^5.0.11",
-    "@babel/core": "^7.4.4",
-    "babel-loader": "^8.0.5"
+    "serve": "^11.0.0"
   },
   "dependencies": {
-    "@material/mwc-icon": "^0.5.0",
     "@webcomponents/webcomponentsjs": "^2.2.10"
   }
 }
