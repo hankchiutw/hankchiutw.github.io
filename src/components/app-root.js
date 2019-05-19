@@ -15,7 +15,7 @@ class AppRoot extends LitElement {
       }
 
       :host:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -28,7 +28,7 @@ class AppRoot extends LitElement {
       }
 
       :host:after {
-        content: '';
+        content: "";
         position: absolute;
         z-index: 1;
         top: 0;
@@ -60,10 +60,10 @@ class AppRoot extends LitElement {
 
   render() {
     return html`
-    <nav-bar></nav-bar>
-    <div class="container">
-      <section>
-        <profile-card
+      <nav-bar></nav-bar>
+      <div class="container">
+        <section>
+          <profile-card
             .imgURL="${protraitImgURL}"
             .resumeJSON="${resumeJSON}"
           ></profile-card>
