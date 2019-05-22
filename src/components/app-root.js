@@ -61,7 +61,7 @@ class AppRoot extends LitElement {
       <div class="container">
         <section>
           <profile-card
-            imgurl='assets/portrait.jpg'
+            imgurl='assets/portrait.png'
             .resumeJSON='${resumeJSON}'
           ></profile-card>
         </section>
