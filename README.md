@@ -22,7 +22,7 @@ I'm a self-taught software engineer focused on front-end while having back-end e
 ### Tech Stack I used
 Front-end engineering becomes complex and developers are free to have their own mindset(opinionated) during the development process.
 
-JavaScript is imperfect, but you can take advantage of thousands of libraries to get things done or build components/modules by yourself. In terms of project architecture, I classify it into 3 parts: __UI template__, __state management__  and __code optimization__. 
+JavaScript is imperfect, but you can take advantage of thousands of libraries to get things done or build components/modules by yourself. In terms of project architecture, I classify it into 3 parts: __UI template__, __state management__  and __code optimization__.
 
 ##### UI template
 The reason why using UI libraries is that things will go messy if you define layout by HTML and operate on DOM elements by `document.querySelector` or jQuery.

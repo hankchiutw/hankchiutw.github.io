@@ -6,7 +6,6 @@ class AppRoot extends LitElement {
     return css`
       :host {
         width: 100%;
-        height: 100%;
         background-color: #efefef;
         display: block;
       }
@@ -69,6 +68,9 @@ class AppRoot extends LitElement {
           </div>
         </section-box>
         <section-box title='Tech Stack'>
+          <tech-stack
+            .resumeJSON='${resumeJSON}'
+          ></tech-stack>
         </section-box>
       </div>
     `
