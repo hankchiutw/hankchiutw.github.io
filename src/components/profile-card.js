@@ -12,7 +12,6 @@ class ProfileCard extends LitElement {
   static get styles() {
     const host = css`
       :host {
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
         display: block;
       }
 
@@ -156,6 +155,7 @@ class ProfileCard extends LitElement {
     })
 
     return html`
+    <shadow-box>
       <div class="profile">
         <div class="profile__portrait"><img src="${this.imgURL}" /></div>
         <div class="profile__content">
@@ -169,6 +169,7 @@ class ProfileCard extends LitElement {
       <div class="profile-social">
         ${profileIcons}
       </div>
+    </shadow-box>
     `
   }
 }

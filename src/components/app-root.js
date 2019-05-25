@@ -59,12 +59,17 @@ class AppRoot extends LitElement {
     return html`
       <nav-bar></nav-bar>
       <div class="container">
-        <section>
-          <profile-card
-            imgurl='assets/portrait.png'
-            .resumeJSON='${resumeJSON}'
-          ></profile-card>
-        </section>
+        <profile-card
+          imgurl='assets/portrait.png'
+          .resumeJSON='${resumeJSON}'
+        ></profile-card>
+        <section-box title='About Me'>
+          <div>
+          I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code.
+          </div>
+        </section-box>
+        <section-box title='Tech Stack'>
+        </section-box>
       </div>
     `
   }
