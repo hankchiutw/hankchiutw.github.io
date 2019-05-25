@@ -17,7 +17,7 @@
 <!-- tocstop -->
 
 ### About me
-I'm a self-taught software engineer focused on front-end while having back-end experiences.
+I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code.
 
 ### Tech Stack I used
 Front-end engineering becomes complex and developers are free to have their own mindset(opinionated) during the development process.
