@@ -97,29 +97,11 @@ class ProfileCard extends LitElement {
         padding: 15px 0;
         display: flex;
         justify-content: center;
-      }
-
-      .profile-social__icon {
-        text-decoration: none;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-        margin: 5px 15px;
         color: var(--white);
-        border-radius: 50%;
-        transition: background-color 0.25s linear 0s;
-      }
-
-      .profile-social__icon:hover {
-        background-color: rgba(0, 0, 0, 0.1);
       }
     `
 
-    return [
-      host,
-      content,
-      social,
-    ]
+    return [host, content, social]
   }
 
   constructor() {
@@ -146,30 +128,23 @@ class ProfileCard extends LitElement {
       `
     })
 
-    const profileIcons = profiles.map(({ network, url }) => {
-      return html`
-        <a href="${url}" target="_blank" class="profile-social__icon"
-          ><icon-font icon="${network}"></icon-font
-        ></a>
-      `
-    })
-
     return html`
-    <shadow-box>
-      <div class="profile">
-        <div class="profile__portrait"><img src="${this.imgURL}" /></div>
-        <div class="profile__content">
-          <div class="profile__title">
-            I'm <span>${name}</span>
-            <div class="profile__label">${label}</div>
+      <shadow-box>
+        <div class="profile">
+          <div class="profile__portrait"><img src="${this.imgURL}" /></div>
+          <div class="profile__content">
+            <div class="profile__title">
+              I'm <span>${name}</span>
+              <div class="profile__label">${label}</div>
+            </div>
+            <div class="profile__info">${infos}</div>
           </div>
-          <div class="profile__info">${infos}</div>
         </div>
-      </div>
-      <div class="profile-social">
-        ${profileIcons}
-      </div>
-    </shadow-box>
+        <social-icons
+          class="profile-social"
+          .profiles="${profiles}"
+        ></social-icons>
+      </shadow-box>
     `
   }
 }

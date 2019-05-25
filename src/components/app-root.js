@@ -51,27 +51,39 @@ class AppRoot extends LitElement {
       section {
         padding-top: 40px;
       }
+
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        color: var(--ultralight-font-color);
+        --social-icons-hover-fg: var(--main-font-color);
+      }
     `
   }
 
   render() {
+    const { basics } = resumeJSON || {}
+    const { profiles } = basics || {}
     return html`
       <nav-bar></nav-bar>
       <div class="container">
         <profile-card
-          imgurl='assets/portrait.png'
-          .resumeJSON='${resumeJSON}'
+          imgurl="assets/portrait.png"
+          .resumeJSON="${resumeJSON}"
         ></profile-card>
-        <section-box title='About Me'>
+        <section-box title="About Me">
           <div>
-          I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code.
+            I'm a self-taught software engineer focused on front-end while
+            having back-end experiences. I love writing structured code and
+            open-source spirits. Standing on the shoulders of giants keeps me
+            improving. I can refactor a big project with a mindset of clean
+            code.
           </div>
         </section-box>
-        <section-box title='Tech Stack'>
-          <tech-stack
-            .resumeJSON='${resumeJSON}'
-          ></tech-stack>
+        <section-box title="Tech Stack">
+          <tech-stack .resumeJSON="${resumeJSON}"></tech-stack>
         </section-box>
+        <footer><social-icons .profiles="${profiles}"></social-icons></footer>
       </div>
     `
   }
