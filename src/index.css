@@ -5,6 +5,7 @@ html, body {
   padding: 0;
   font-size: 20px;
   font-weight: 300;
+  font-family: "Open Sans";
 }
 
 :root {
