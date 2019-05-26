@@ -7,17 +7,23 @@
     + [UI template](#ui-template)
       - [React](#react)
       - [lit-element](#lit-element)
-      - [Styling](#styling)
       - [Storybook](#storybook)
+    + [Styling](#styling)
+      - [styled-components](#styled-components)
+      - [BEM](#bem)
+      - [SCSS](#scss)
     + [State management](#state-management)
       - [Redux or Flux](#redux-or-flux)
     + [Code optimization](#code-optimization)
       - [Babel](#babel)
       - [Webpack](#webpack)
       - [Rollup](#rollup)
-      - [Parceljs](#parceljs)
+      - [Parcel](#parcel)
     + [Testing](#testing)
+      - [Enzyme and Jest](#enzyme-and-jest)
+      - [mocha](#mocha)
     + [Editor, IDE](#editor-ide)
+      - [Vim](#vim)
 - [Other interests](#other-interests)
 - [Misc](#misc)
     + [From EE to software development](#from-ee-to-software-development)
@@ -31,7 +37,7 @@ I'm a self-taught software engineer focused on front-end while having back-end e
 ## Tech Stack I used
 Front-end engineering becomes complex and developers are free to have their own mindset(opinionated) during the development process.
 
-JavaScript is imperfect, but you can take advantage of thousands of libraries to get things done or build components/modules by yourself. In terms of project architecture, I classify it into 3 parts: _UI template_, _state management_  and _code optimization_.
+JavaScript is imperfect, but you can take advantage of thousands of libraries to get things done or build components/modules by yourself. I classify tools for different aspects of front-end development: _UI template_, _styling_, _state management_, _code optimization_, _testing_ and _editor_.
 
 #### UI template
 The reason why using UI libraries is that things will go messy if you define layout by HTML and operate on DOM elements by `document.querySelector` or jQuery.
@@ -52,19 +58,28 @@ Instead of JSX, I can write HTML by means of [JavaScript template literals](http
 
 Define CSS inside the shadow root and it will be scoped for the component only.
 
-##### Styling
-
-Use [styled-components](https://www.styled-components.com/docs/basics) for React components.
-
-Use [BEM](http://getbem.com/introduction/) whenever I have to define CSS classes.
-
-CSS [var()](https://developer.mozilla.org/en-US/docs/Web/CSS/var) is good enough for many cases without using SCSS.
-
 ##### [Storybook](https://storybook.js.org/docs/basics/introduction/)
 
 To develop and demo UI components.
 
+#### Styling
+CSS is good enough for many cases, especially [CSS var()](https://developer.mozilla.org/en-US/docs/Web/CSS/var) is useful for theming. The key question is how to do styling in a maintainable and scalable way.
+
+##### [styled-components](https://www.styled-components.com/docs/basics)
+
+For React components.
+
+##### [BEM](http://getbem.com/introduction/)
+
+Use BEM whenever I have to define CSS classes.
+
+##### [SCSS](https://sass-lang.com/documentation)
+Basically, I avoid using SCSS in new projects. Nested selectors become unmaintainable in the end.
+
+BEM forces me thinking about maintainabilities when designing DOM layout(which is better). But I did use SCSS in old projects.
+
 #### State management
+Having a consistent state management policy will make your projects scalable.
 
 ##### Redux or Flux
 
@@ -74,11 +89,11 @@ Redux would be better for complicated projects.
 I've ever used old fashioned two-way binding Angular 1.x and got bad performance if not carefully dealing the data flow.
 
 #### Code optimization
-The optimization here including transpiling, bundling and minimization.
+Optimization here including transpiling, bundling and minimization.
 
 ##### Babel
 
-Basically, all the bundling tools use Babel for transpiling. I have basic `.babelrc` looks like this [gist](https://gist.github.com/hankchiutw/bd35cb9ef21135fb00b8cdc5d79a47c4#file-babelrc).
+Basically, all the bundling tools use Babel for transpiling. My basic `.babelrc` looks like this [gist](https://gist.github.com/hankchiutw/bd35cb9ef21135fb00b8cdc5d79a47c4#file-babelrc).
 
 ##### Webpack
 
@@ -90,15 +105,18 @@ E.g. [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-anal
 
 Suitable for non-UI module development.
 
-##### Parceljs
+##### [Parcel](https://parceljs.org)
 
 I use it for prototyping because it's a zero-configuration bundler.
 
 #### Testing
-Enzyme and Jest.
+Not yet dabble in it much, just simple unit testing.
 
-#### Editor, IDE
-Vim.
+##### Enzyme and Jest
+##### mocha
+
+#### Editor
+##### Vim
 
 How I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim).
 
@@ -113,6 +131,11 @@ How I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim).
     - I have a simple Vim plugin for flutter: [hankchiutw/flutter-reload.vim](https://github.com/hankchiutw/flutter-reload.vim)
   - [NativeScript](https://www.nativescript.org/)
   - [Electron](https://electronjs.org/)
+
+- WebAssembly, Rust
+
+- [gitflow](https://github.com/nvie/gitflow)
+  - Applied [git flow branching model](https://nvie.com/posts/a-successful-git-branching-model/) in some of my projects.
 
 - Docker
   - my shell scripts for Docker administration: [hankchiutw/microservice-docker-utils](https://github.com/hankchiutw/microservice-docker-utils)
