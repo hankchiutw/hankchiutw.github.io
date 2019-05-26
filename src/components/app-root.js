@@ -80,7 +80,7 @@ class AppRoot extends LitElement {
             code.
           </div>
         </section-box>
-        <section-box title="Tech Stack">
+        <section-box title="Tech Stack I used">
           <tech-stack .resumeJSON="${resumeJSON}"></tech-stack>
         </section-box>
         <footer><social-icons .profiles="${profiles}"></social-icons></footer>
