@@ -88,6 +88,8 @@ class ProfileCard extends LitElement {
 
       .profile__sub-label {
         color: var(--light-font-color);
+        font-weight: 400;
+        font-size: 16px;
       }
     `
 
