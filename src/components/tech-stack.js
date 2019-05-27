@@ -49,13 +49,18 @@ class TechStack extends LitElement {
       shadow-box {
         background-color: var(--white);
         padding: 50px 40px 25px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+
+      @media (max-width: 767px) {
+        shadow-box {
+          display: block;
+        }
       }
 
       .stack {
-        flex: 1;
         margin: 0 15px 25px;
       }
 
@@ -85,6 +90,7 @@ class TechStack extends LitElement {
 
       .detail {
         font-size: 16px;
+        word-break: break-word;
       }
     `
   }
