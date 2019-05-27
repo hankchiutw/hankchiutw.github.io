@@ -1,4 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
+import showdown from 'showdown'
+const mdConverter = new showdown.Converter()
 
 const stacks = [
   {
@@ -55,6 +58,7 @@ class TechStack extends LitElement {
     return css`
       :host {
         text-align: left;
+        font-weight: 400;
       }
 
       shadow-box {
@@ -86,14 +90,12 @@ class TechStack extends LitElement {
 
       .stack__title {
         font-size: 20px;
-        font-weight: 400;
         text-transform: uppercase;
         margin: 0;
       }
 
       .stack__subtitle {
         font-size: 16px;
-        font-weight: 400;
         margin: 15px 0 0;
         color: var(--main-bg-color);
       }
@@ -105,7 +107,7 @@ class TechStack extends LitElement {
         background-color: var(--seporator-color);
         border: 0;
         display: inline-block;
-        margin: 25px 0;
+        margin: 25px 0 0;
       }
 
       .stack__detail {
@@ -123,7 +125,7 @@ class TechStack extends LitElement {
           <div class="stack__title">${title}</div>
           <div class="stack__subtitle">${subTitle}</div>
           <hr />
-          <div class="stack__detail">${detail}</div>
+          <div class="stack__detail">${unsafeHTML(mdConverter.makeHtml(detail))}</div>
         </div>
       `
     })

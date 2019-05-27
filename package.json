@@ -32,6 +32,8 @@
     "serve": "^11.0.0"
   },
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.2.10"
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0",
+    "showdown": "^1.9.0"
   }
 }
