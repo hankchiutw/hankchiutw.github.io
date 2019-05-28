@@ -17,6 +17,8 @@ class SectionBox extends LitElement {
       h2 {
         font-size: 34px;
         font-weight: 600;
+        margin-top: 70px;
+        margin-bottom: 25px;
       }
     `
   }

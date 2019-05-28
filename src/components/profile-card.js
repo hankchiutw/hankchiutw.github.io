@@ -17,17 +17,20 @@ class ProfileCard extends LitElement {
 
       .profile {
         background-color: white;
-        padding: 57px 50px 15px 50px;
+        padding: 57px 50px 15px;
         display: flex;
       }
 
       .profile__portrait {
         flex: 5;
         padding: 0 15px;
+        text-align: center;
+        margin-bottom: 30px;
       }
 
       .profile__portrait img {
         width: 100%;
+        max-width: 400px;
       }
     `
 
@@ -103,7 +106,44 @@ class ProfileCard extends LitElement {
       }
     `
 
-    return [host, content, social]
+    const media = css`
+      @media (max-width: 767px) {
+        .profile {
+          padding: 30px 20px 15px;
+          display: block;
+        }
+
+        .profile__title {
+          text-align: center;
+        }
+
+        .profile__content:before {
+          text-align: center;
+          display: flex;
+          max-width: 150px;
+          justify-content: center;
+          margin: auto;
+        }
+
+        .profile__title:before {
+          display: flex;
+          max-width: 150px;
+          justify-content: center;
+          height: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 18px;
+        }
+
+        .profile__row {
+          margin-bottom: 28px;
+          flex-direction: column;
+        }
+      }
+
+    `
+
+    return [host, content, social, media]
   }
 
   constructor() {

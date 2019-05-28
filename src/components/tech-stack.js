@@ -1,6 +1,8 @@
 import { LitElement, html, css } from 'lit-element'
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
 import showdown from 'showdown'
+
+showdown.setOption('openLinksInNewWindow', true)
 const mdConverter = new showdown.Converter()
 
 const stacks = [
@@ -72,6 +74,7 @@ class TechStack extends LitElement {
 
       @media (max-width: 767px) {
         shadow-box {
+          padding: 30px 20px;
           display: block;
         }
       }
