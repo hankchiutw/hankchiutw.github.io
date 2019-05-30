@@ -8,8 +8,7 @@ const mdConverter = new showdown.Converter()
 
 class TechStack extends LitElement {
   static get properties() {
-    return {
-    }
+    return {}
   }
 
   static get styles() {
@@ -92,8 +91,12 @@ class TechStack extends LitElement {
         `
       }
     )
+
     return html`
-      <shadow-box> ${content} </shadow-box>
+      <shadow-box>${content}</shadow-box>
+      <section-text>
+        ${unsafeHTML(mdConverter.makeHtml(_('tech-stack.detail')))}
+      </section-text>
     `
   }
 }

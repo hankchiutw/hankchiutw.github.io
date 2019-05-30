@@ -79,7 +79,7 @@ Basically, I avoid using SCSS in new projects. Nested selectors become unmaintai
 BEM forces me thinking about maintainabilities when designing DOM layout(which is better). But I did use SCSS in old projects.
 
 #### State management
-Having a consistent state management policy will make your projects scalable.
+Having a consistent state management strategy will make your projects scalable.
 
 ##### Redux or Flux
 

@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
 import resumeJSON from '../../assets/resume.json'
+import { _, i18nReady } from '../i18n.js'
 
 class AppRoot extends LitElement {
   static get styles() {
@@ -71,16 +72,10 @@ class AppRoot extends LitElement {
           imgurl="assets/portrait.png"
           .resumeJSON="${resumeJSON}"
         ></profile-card>
-        <section-box title="About Me">
-          <div>
-            I'm a self-taught software engineer focused on front-end while
-            having back-end experiences. I love writing structured code and
-            open-source spirits. Standing on the shoulders of giants keeps me
-            improving. I can refactor a big project with a mindset of clean
-            code.
-          </div>
+        <section-box title="${_('about-me.title')}">
+          <section-text>${_('about-me.detail')}</section-text>
         </section-box>
-        <section-box title="Tech Stack I used">
+        <section-box title="${_('tech-stack.title')}">
           <tech-stack .resumeJSON="${resumeJSON}"></tech-stack>
         </section-box>
         <footer><social-icons .profiles="${profiles}"></social-icons></footer>
@@ -89,4 +84,6 @@ class AppRoot extends LitElement {
   }
 }
 
-customElements.define('app-root', AppRoot)
+i18nReady.then(() => {
+  customElements.define('app-root', AppRoot)
+})

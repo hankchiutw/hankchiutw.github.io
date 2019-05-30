@@ -1,5 +1,11 @@
 {
+  "about-me": {
+    "title": "About Me",
+    "detail": "I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code."
+  },
   "tech-stack": {
+    "title": "Tech Stack I used",
+    "detail": "Keywords: __React, Web Component, BEM, Redux, Webpack, Vim__. You may want to read narrative details here: [README.md](https://github.com/hankchiutw/hankchiutw.github.io#hankchiutw)",
     "stacks": [
       {
         "icon": "embed",
@@ -17,7 +23,7 @@
         "icon": "stack",
         "title": "State management",
         "subTitle": "Redux, Flux",
-        "detail": "Having a consistent state management policy will make your projects scalable."
+        "detail": "Having a consistent state management strategy will make your projects scalable."
       },
       {
         "icon": "rocket",
