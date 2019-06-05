@@ -7,4 +7,6 @@ export const i18nReady = i18next.use(XHR).init({
   debug: false,
   lng: 'en',
   fallbackLng: 'en',
+  ns: ['translation', 'resume'],
+  defaultNS: 'translation',
 })

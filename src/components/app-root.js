@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element'
-import resumeJSON from '../../assets/resume.json'
 import { _, i18nReady } from '../i18n.js'
 
 class AppRoot extends LitElement {
@@ -63,20 +62,19 @@ class AppRoot extends LitElement {
   }
 
   render() {
-    const { basics } = resumeJSON || {}
-    const { profiles } = basics || {}
+    const profiles = _('resume:basics.profiles', { returnObjects: true })
     return html`
       <nav-bar></nav-bar>
       <div class="container">
-        <profile-card
-          imgurl="assets/portrait.png"
-          .resumeJSON="${resumeJSON}"
-        ></profile-card>
+        <profile-card imgurl="assets/portrait.png"></profile-card>
         <section-box title="${_('about-me.title')}">
           <section-text>${_('about-me.detail')}</section-text>
         </section-box>
         <section-box title="${_('tech-stack.title')}">
-          <tech-stack .resumeJSON="${resumeJSON}"></tech-stack>
+          <tech-stack></tech-stack>
+        </section-box>
+        <section-box title="${_('work-exp.title')}">
+          <work-exp></work-exp>
         </section-box>
         <footer><social-icons .profiles="${profiles}"></social-icons></footer>
       </div>

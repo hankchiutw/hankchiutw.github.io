@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element'
+import { _, i18nReady } from '../i18n.js'
 import './icon-font.js'
 
 class ProfileCard extends LitElement {
@@ -140,7 +141,6 @@ class ProfileCard extends LitElement {
           flex-direction: column;
         }
       }
-
     `
 
     return [host, content, social, media]
@@ -152,7 +152,8 @@ class ProfileCard extends LitElement {
   }
 
   render() {
-    const { basics, work } = this.resumeJSON || {}
+    const basics = _('resume:basics', { returnObjects: true })
+    const work = _('resume:work', { returnObjects: true })
     const { name, label, location, email, profiles } = basics || {}
     const { postalCode, countryCode } = location || {}
     const { company, position } = work[0]
@@ -190,4 +191,7 @@ class ProfileCard extends LitElement {
     `
   }
 }
-customElements.define('profile-card', ProfileCard)
+
+i18nReady.then(() => {
+  customElements.define('profile-card', ProfileCard)
+})
