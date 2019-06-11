@@ -58,7 +58,7 @@ class WorkExp extends LitElement {
 
       .box-container__box {
         background-color: var(--white);
-        padding: 20px;
+        padding: 24px;
         border-top: solid 5px var(--main-bg-color);
         position: relative;
       }
@@ -98,7 +98,7 @@ class WorkExp extends LitElement {
       }
 
       .box-container:nth-child(odd) .box-container__box:after {
-        right: -40px;
+        right: -41px;
       }
 
       .box-container:nth-child(even) .box-container__box:before {
@@ -107,7 +107,7 @@ class WorkExp extends LitElement {
       }
 
       .box-container:nth-child(even) .box-container__box:after {
-        left: -38px;
+        left: -37px;
       }
 
       .box-container:first-child .box-container__box:before {
@@ -135,18 +135,33 @@ class WorkExp extends LitElement {
         color: var(--main-bg-color);
       }
 
-      .box-container__thumbnail {
+      .box-container__head {
         margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+      }
+
+      .box-container__thumbnail {
+        height: 60px;
+        width: 60px;
+        margin-right: 20px;
       }
 
       .box-container__thumbnail img {
         max-height: 60px;
+        max-width: 60px;
+      }
+
+      .box-container__company {
+        font-size: 20px;
       }
 
       .box-container__position {
         text-transform: uppercase;
         margin-top: 10px;
-        margin-bottom: 30px;
       }
 
       .box-container__summary {
@@ -169,11 +184,16 @@ class WorkExp extends LitElement {
 
   firstUpdated() {}
 
+  _formatDate(str) {
+    return str ? str.replace('-', '.').slice(0, 7) : ''
+  }
+
   render() {
     const works = _('resume:work', { returnObjects: true })
     const workHtmlFactory = ({
       startDate,
       endDate,
+      company,
       website,
       thumbnail,
       summary,
@@ -181,13 +201,18 @@ class WorkExp extends LitElement {
     }) => html`
       <div class="box-container">
         <shadow-box class="box-container__box">
-          <div class="box-container__date">${startDate}-${endDate}</div>
-          <div class="box-container__thumbnail">
-            <a href="${website}" style=${website ? '' : 'pointer-events: none'} target="_blank"
-              ><img src="${thumbnail}"
-            /></a>
+          <div class="box-container__date">
+            ${this._formatDate(startDate)} - ${this._formatDate(endDate)}
           </div>
-          <div class="box-container__position">${position}</div>
+          <div class="box-container__head">
+            <a class="box-container__thumbnail" href="${website}" style=${website ? '' : 'pointer-events: none'} target="_blank">
+              <img src="${thumbnail}" />
+            </a>
+            <div>
+              <div class="box-container__company">${company}</div>
+              <div class="box-container__position">${position}</div>
+            </div>
+          </div>
           <div class="box-container__summary">${mdToUnsafeHtml(summary)}</div>
         </shadow-box>
       </div>
