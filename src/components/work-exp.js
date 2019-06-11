@@ -26,7 +26,7 @@ class WorkExp extends LitElement {
         position: absolute;
         left: 50%;
         top: 60px;
-        bottom: 0px;
+        bottom: 85px;
         display: block;
       }
 
@@ -55,9 +55,7 @@ class WorkExp extends LitElement {
       .box-container:nth-child(2) {
         margin-top: 50px;
       }
-    `
 
-    const boxWithArrow = css`
       .box-container__box {
         background-color: var(--white);
         padding: 20px;
@@ -65,12 +63,23 @@ class WorkExp extends LitElement {
         position: relative;
       }
 
+      .box-container:nth-child(odd) .box-container__box {
+        margin-right: 35px;
+      }
+
+      .box-container:nth-child(even) .box-container__box {
+        margin-left: 35px;
+      }
+
+    `
+
+    const arrowAndDot = css`
       .box-container__box:before {
         font-size: 80px;
         position: absolute;
         line-height: 44px;
         color: white;
-        top: 35px;
+        top: 50%;
       }
 
       .box-container__box:after {
@@ -80,11 +89,7 @@ class WorkExp extends LitElement {
         width: 8px;
         height: 8px;
         position: absolute;
-        top: 55px;
-      }
-
-      .box-container:nth-child(odd) .box-container__box {
-        margin-right: 35px;
+        top: calc(50% + 20px);
       }
 
       .box-container:nth-child(odd) .box-container__box:before {
@@ -96,10 +101,6 @@ class WorkExp extends LitElement {
         right: -40px;
       }
 
-      .box-container:nth-child(even) .box-container__box {
-        margin-left: 35px;
-      }
-
       .box-container:nth-child(even) .box-container__box:before {
         content: "\\276e";
         left: -18px;
@@ -107,6 +108,24 @@ class WorkExp extends LitElement {
 
       .box-container:nth-child(even) .box-container__box:after {
         left: -38px;
+      }
+
+      .box-container:first-child .box-container__box:before {
+        top: 35px;
+      }
+
+      .box-container:first-child .box-container__box:after {
+        top: 55px;
+      }
+
+      .box-container:last-child .box-container__box:before {
+        top: auto;
+        bottom: 35px;
+      }
+
+      .box-container:last-child .box-container__box:after {
+        top: auto;
+        bottom: 55px;
       }
     `
 
@@ -139,7 +158,7 @@ class WorkExp extends LitElement {
       host,
       timeline,
       columnLayout,
-      boxWithArrow,
+      arrowAndDot,
       boxContent,
     ]
   }
