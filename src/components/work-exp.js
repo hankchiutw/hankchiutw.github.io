@@ -71,6 +71,31 @@ class WorkExp extends LitElement {
         margin-left: 35px;
       }
 
+      @media (max-width: 767px) {
+        .box-container {
+          width: 100%;
+        }
+
+        .box-container:nth-child(odd) {
+          float: none;
+        }
+
+        .box-container:nth-child(even) {
+          float: none;
+        }
+
+        .box-container:nth-child(2) {
+          margin-top: 0;
+        }
+
+        .box-container:nth-child(odd) .box-container__box {
+          margin-right: 0;
+        }
+
+        .box-container:nth-child(even) .box-container__box {
+          margin-left: 0;
+        }
+      }
     `
 
     const arrowAndDot = css`
@@ -90,6 +115,16 @@ class WorkExp extends LitElement {
         height: 8px;
         position: absolute;
         top: calc(50% + 20px);
+      }
+
+      @media (max-width: 767px) {
+        .box-container__box:before {
+          display: none;
+        }
+
+        .box-container__box:after {
+          display: none;
+        }
       }
 
       .box-container:nth-child(odd) .box-container__box:before {
