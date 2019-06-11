@@ -10,12 +10,14 @@ class WorkExp extends LitElement {
   }
 
   static get styles() {
-    return css`
+    const host = css`
       :host {
         display: block;
         position: relative;
       }
+    `
 
+    const timeline = css`
       :host:before {
         content: "";
         background-color: var(--main-bg-color);
@@ -33,7 +35,9 @@ class WorkExp extends LitElement {
         content: "";
         display: block;
       }
+    `
 
+    const columnLayout = css`
       .box-container {
         width: 50%;
         margin-bottom: 25px;
@@ -51,7 +55,9 @@ class WorkExp extends LitElement {
       .box-container:nth-child(2) {
         margin-top: 50px;
       }
+    `
 
+    const boxWithArrow = css`
       .box-container__box {
         background-color: var(--white);
         padding: 20px;
@@ -102,7 +108,9 @@ class WorkExp extends LitElement {
       .box-container:nth-child(even) .box-container__box:after {
         left: -38px;
       }
+    `
 
+    const boxContent = css`
       .box-container__date {
         font-weight: 700;
         color: var(--main-bg-color);
@@ -126,6 +134,14 @@ class WorkExp extends LitElement {
         text-align: left;
       }
     `
+
+    return [
+      host,
+      timeline,
+      columnLayout,
+      boxWithArrow,
+      boxContent,
+    ]
   }
 
   constructor() {
