@@ -1,10 +1,6 @@
 import { LitElement, html, css } from 'lit-element'
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
+import { mdToUnsafeHtml } from '../utils.js'
 import { _, i18nReady } from '../i18n.js'
-import showdown from 'showdown'
-
-showdown.setOption('openLinksInNewWindow', true)
-const mdConverter = new showdown.Converter()
 
 class TechStack extends LitElement {
   static get properties() {
@@ -85,7 +81,7 @@ class TechStack extends LitElement {
             <div class="stack__subtitle">${subTitle}</div>
             <hr />
             <div class="stack__detail">
-              ${unsafeHTML(mdConverter.makeHtml(detail))}
+              ${mdToUnsafeHtml(detail)}
             </div>
           </div>
         `
@@ -95,7 +91,7 @@ class TechStack extends LitElement {
     return html`
       <shadow-box>${content}</shadow-box>
       <section-text>
-        ${unsafeHTML(mdConverter.makeHtml(_('tech-stack.detail')))}
+        ${mdToUnsafeHtml(_('tech-stack.detail'))}
       </section-text>
     `
   }
