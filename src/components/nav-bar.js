@@ -12,7 +12,7 @@ class NavBar extends LitElement {
   }
   render() {
     return html`
-    <div class='logo'>logo</div>
+    <div class='logo'></div>
     `
   }
 }
