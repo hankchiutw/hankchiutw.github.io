@@ -4,7 +4,7 @@
     "detail": "I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code."
   },
   "tech-stack": {
-    "title": "Tech Stack I used",
+    "title": "Tech Stack",
     "detail": "Keywords: __React, Web Component, BEM, Redux, Webpack, Vim__. You may want to read narrative details here: [README.md](https://github.com/hankchiutw/hankchiutw.github.io#hankchiutw)",
     "stacks": [
       {
@@ -35,13 +35,13 @@
         "icon": "bug",
         "title": "Testing",
         "subTitle": "Enzyme, Jest, mocha",
-        "detail": "Not yet dabble in it much, just simple unit testing."
+        "detail": "Simple unit testing experiences. Not a follower of TDD."
       },
       {
         "icon": "terminal",
         "title": "Editor",
         "subTitle": "Vim",
-        "detail": "How I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim)."
+        "detail": "See how I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim)."
       }
     ]
   },

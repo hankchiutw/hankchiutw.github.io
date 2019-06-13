@@ -32,7 +32,7 @@
       "company": "KaiOS Technologies, Inc.",
       "website": "https://www.kaiostech.com",
       "thumbnail": "assets/kaios.png",
-      "summary": "### Develop core apps for KaiOS(the emerging OS for feature phone) using JavaScript.\n*Achievements*\n- Utilize the Gecko engine to build the customized b2g simulator as KaiOS SDK.\n- Refactor Contact app with React to improve performance.\n- Implement google account management and contacts sync.\n- Cooperate with backend team to implement Payment app with PSMS payment flow.",
+      "summary": "### Develop mobile apps for using JavaScript.\nKaiOS is a mobile operating system built upon browser engine.\n\n*Achievements*\n- Migrate legacy System app to modern toolchain(webpack, ES6, etc).\n- Utilize the Gecko engine to build the customized b2g simulator as KaiOS SDK.\n- Refactor Contact app with React to improve performance.\n- Implement google account management and contacts sync.\n- Cooperate with backend team to implement Payment app with PSMS payment flow.",
       "position": "Senior Software Engineer, Front-end",
       "startDate": "2017-01-16"
     },
@@ -55,7 +55,7 @@
     {
       "company": "National Taiwan University, Clinical Psychology Lab, Mixed Signal IC design Lab",
       "thumbnail": "assets/ntu.png",
-      "summary": "- Linux environment, server-side administration.\n- Install/maintain science application software(MATLAB, Cadence IC, Calibre, etc)\n- Customize shell scripts for automation(Python, bash shell, etc).",
+      "summary": "(parttime in college)\n- Linux environment, server-side administration.\n- Install/maintain science application software(MATLAB, Cadence IC, Calibre, etc)\n- Customize shell scripts for automation(Python, bash shell, etc).",
       "position": "Linux System Administrator",
       "startDate": "2006-10-01",
       "endDate": "2010-10-01"

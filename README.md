@@ -110,7 +110,7 @@ Suitable for non-UI module development.
 I use it for prototyping because it's a zero-configuration bundler.
 
 #### Testing
-Not yet dabble in it much, just simple unit testing.
+Simple unit testing experiences. Not a follower of TDD.
 
 ##### Enzyme and Jest
 ##### mocha
@@ -118,7 +118,7 @@ Not yet dabble in it much, just simple unit testing.
 #### Editor
 ##### Vim
 
-How I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim).
+See how I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim).
 
 ## Other interests
 - [stenciljs](https://stenciljs.com/docs/introduction/), a compiler for web components.
@@ -148,7 +148,7 @@ Practically, in college, I did some parttime jobs of building web service. To bu
 
 At some point, [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) was becoming popular. With such asynchronous technique, developing a web page became more like developing a desktop app. Hundreds of [JavaScript frameworks](https://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript) popped up. Using frameworks is cool, but learning [prototype chain](https://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript) guided me to the core of JavaScript.
 
-Building side projects becoming my hobbies. Not until my second job did I build something in production. Both hardware and software engineering are interesting for me. Maybe the next project would be an IoT project(lol).
+My journey started from web and JavaScript and had grown up to mobile and more. Software engineering already occupied an important place in modern technologies. I'm glad I'm in.
 
 #### Liked design patterns
 - prefer composition than inheritance
