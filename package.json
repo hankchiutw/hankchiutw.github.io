@@ -5,7 +5,7 @@
   "main": "src/index.html",
   "scripts": {
     "start": "concurrently 'parcel src/index.js --public-url ./' 'serve'",
-    "build": "parcel build src/index.js",
+    "build": "parcel build src/index.js --public-url ./",
     "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook"
   },
