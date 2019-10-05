@@ -24,7 +24,7 @@ class WorkExp extends LitElement {
         opacity: 0.2;
         width: 4px;
         position: absolute;
-        left: 50%;
+        left: calc(50% - 2px);
         top: 60px;
         bottom: 85px;
         display: block;
@@ -71,6 +71,15 @@ class WorkExp extends LitElement {
         margin-left: 35px;
       }
 
+      .box-container:last-child {
+        float: right;
+      }
+
+      .box-container:last-child .box-container__box {
+        margin-right: auto;
+        margin-left: 35px;
+      }
+
       @media (max-width: 767px) {
         .box-container {
           width: 100%;
@@ -95,16 +104,28 @@ class WorkExp extends LitElement {
         .box-container:nth-child(even) .box-container__box {
           margin-left: 0;
         }
+
+        .box-container:last-child .box-container__box {
+          margin-right: 0;
+          margin-left: 0;
+        }
       }
     `
 
     const arrowAndDot = css`
+      :host {
+        --arrow-offset: -18px;
+        --dot-offset: -39px;
+        --arrow-top: 50%;
+        --dot-top: calc(50% + 20px);
+      }
+
       .box-container__box:before {
         font-size: 80px;
         position: absolute;
         line-height: 44px;
         color: white;
-        top: 50%;
+        top: var(--arrow-top);
       }
 
       .box-container__box:after {
@@ -114,7 +135,7 @@ class WorkExp extends LitElement {
         width: 8px;
         height: 8px;
         position: absolute;
-        top: calc(50% + 20px);
+        top: var(--dot-top);
       }
 
       @media (max-width: 767px) {
@@ -129,20 +150,20 @@ class WorkExp extends LitElement {
 
       .box-container:nth-child(odd) .box-container__box:before {
         content: "\\276f";
-        right: -18px;
+        right: var(--arrow-offset);
       }
 
       .box-container:nth-child(odd) .box-container__box:after {
-        right: -41px;
+        right: var(--dot-offset);
       }
 
       .box-container:nth-child(even) .box-container__box:before {
         content: "\\276e";
-        left: -18px;
+        left: var(--arrow-offset);
       }
 
       .box-container:nth-child(even) .box-container__box:after {
-        left: -37px;
+        left: var(--dot-offset);
       }
 
       .box-container:first-child .box-container__box:before {
@@ -156,11 +177,16 @@ class WorkExp extends LitElement {
       .box-container:last-child .box-container__box:before {
         top: auto;
         bottom: 35px;
+        content: "\\276e";
+        right: auto;
+        left: var(--arrow-offset);
       }
 
       .box-container:last-child .box-container__box:after {
         top: auto;
         bottom: 55px;
+        right: auto;
+        left: var(--dot-offset);
       }
     `
 

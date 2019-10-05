@@ -32,7 +32,7 @@
 <!-- tocstop -->
 
 ## About me
-I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code.
+I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. Able to refactor a big project with a mindset of clean code.
 
 ## Tech Stack I used
 Front-end engineering becomes complex and developers are free to have their own mindset(opinionated) during the development process.
@@ -110,7 +110,7 @@ Suitable for non-UI module development.
 I use it for prototyping because it's a zero-configuration bundler.
 
 #### Testing
-Simple unit testing experiences. Not a follower of TDD.
+Write testing, but not a strict follower of TDD.
 
 ##### Enzyme and Jest
 ##### mocha

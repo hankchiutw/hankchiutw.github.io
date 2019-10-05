@@ -1,7 +1,7 @@
 {
   "about-me": {
     "title": "About Me",
-    "detail": "I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Standing on the shoulders of giants keeps me improving. I can refactor a big project with a mindset of clean code."
+    "detail": "I'm a self-taught software engineer focused on front-end while having back-end experiences. I love writing structured code and open-source spirits. Able to refactor a big project with a mindset of clean code. *Standing on the shoulders of giants keeps me improving.*"
   },
   "tech-stack": {
     "title": "Tech Stack",
@@ -35,12 +35,12 @@
         "icon": "bug",
         "title": "Testing",
         "subTitle": "Enzyme, Jest, mocha",
-        "detail": "Simple unit testing experiences. Not a follower of TDD."
+        "detail": "Write testing, but not a strict follower of TDD."
       },
       {
         "icon": "terminal",
         "title": "Editor",
-        "subTitle": "Vim",
+        "subTitle": "Vim, tmux",
         "detail": "See how I use Vim as an IDE: [hankchiutw/vim](https://github.com/hankchiutw/vim)."
       }
     ]

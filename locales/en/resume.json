@@ -29,12 +29,21 @@
   },
   "work": [
     {
+      "company": "aetherAI",
+      "website": "https://aetherai.com/",
+      "thumbnail": "assets/aetherai.png",
+      "summary": "### Refactor large Angular project in terms of performance and code quality.\naetherAI provides a digital pathology system for doctors easy to work on medical images through web browsers.\n\nUse TypeScript.\n\n*Achievements*\n- Identify the key performance bottleneck of the Angular project.\n- Make the first version of PathGateway, which is an file management app made by Electron.",
+      "position": "Senior Software Engineer, Front-end",
+      "startDate": "2019-07-08"
+    },
+    {
       "company": "KaiOS Technologies, Inc.",
       "website": "https://www.kaiostech.com",
       "thumbnail": "assets/kaios.png",
-      "summary": "### Develop mobile apps for using JavaScript.\nKaiOS is a mobile operating system built upon browser engine.\n\n*Achievements*\n- Migrate legacy System app to modern toolchain(webpack, ES6, etc).\n- Utilize the Gecko engine to build the customized b2g simulator as KaiOS SDK.\n- Refactor Contact app with React to improve performance.\n- Implement google account management and contacts sync.\n- Cooperate with backend team to implement Payment app with PSMS payment flow.",
+      "summary": "### Develop mobile apps using JavaScript.\nKaiOS is a mobile operating system built upon browser engine.\n\n*Achievements*\n- Migrate legacy System app to modern toolchain(webpack, ES6, etc).\n- Utilize the Gecko engine to build the customized b2g simulator as KaiOS SDK.\n- Refactor Contact app with React to improve performance.\n- Implement google account management and contacts sync.\n- Cooperate with backend team to implement Payment app with PSMS payment flow.",
       "position": "Senior Software Engineer, Front-end",
-      "startDate": "2017-01-16"
+      "startDate": "2017-01-16",
+      "endDate": "2019-06-28"
     },
     {
       "company": "YoWoo Technology",

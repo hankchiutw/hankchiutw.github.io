@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element'
+import { mdToUnsafeHtml } from '../utils.js'
 import { _, i18nReady } from '../i18n.js'
 
 class AppRoot extends LitElement {
@@ -68,7 +69,7 @@ class AppRoot extends LitElement {
       <div class="container">
         <profile-card imgurl="assets/portrait.png"></profile-card>
         <section-box title="${_('about-me.title')}">
-          <section-text>${_('about-me.detail')}</section-text>
+          <section-text>${mdToUnsafeHtml(_('about-me.detail'))}</section-text>
         </section-box>
         <section-box title="${_('tech-stack.title')}">
           <tech-stack></tech-stack>
