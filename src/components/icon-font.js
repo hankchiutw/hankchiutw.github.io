@@ -47,6 +47,9 @@ class IconFont extends LitElement {
       .icon-stackoverflow:before {
         content: "\\ead0";
       }
+      .icon-angular:before {
+        content: "\\e900";
+      }
     `
   }
 
