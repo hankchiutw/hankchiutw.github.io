@@ -631,8 +631,8 @@ var e=require("./dist/commonjs/index.js").default;module.exports=e,module.export
       :host {
         --arrow-offset: -18px;
         --dot-offset: -39px;
-        --arrow-top: 50%;
-        --dot-top: calc(50% + 20px);
+        --arrow-top: 15%;
+        --dot-top: calc(15% + 20px);
       }
 
       .box-container__box:before {
