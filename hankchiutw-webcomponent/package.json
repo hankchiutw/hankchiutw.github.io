@@ -1,0 +1,22 @@
+{
+  "name": "hankchiutw-webcomponent",
+  "version": "0.2.2",
+  "scripts": {
+    "watch": "parcel src/index.js  --public-url ../dist -d ../dist",
+    "build": "parcel build src/index.js --public-url ../dist -d ../dist"
+  },
+  "private": true,
+  "keywords": [
+    "storybook",
+    "parcel"
+  ],
+  "author": "hankchiutw",
+  "license": "ISC",
+  "browserslist": [
+    "> 5%"
+  ],
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0"
+  }
+}
