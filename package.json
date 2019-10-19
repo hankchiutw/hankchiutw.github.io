@@ -8,13 +8,16 @@
     "build:wc": "yarn workspace hankchiutw-webcomponent build",
     "start:react": "concurrently 'yarn workspace hankchiutw-react watch' 'serve'",
     "build:react": "yarn workspace hankchiutw-react build",
+    "start:angular": "yarn workspace hankchiutw-angular start",
+    "build:angular": "yarn workspace hankchiutw-react build",
     "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook"
   },
   "private": true,
   "workspaces": [
     "hankchiutw-react",
-    "hankchiutw-webcomponent"
+    "hankchiutw-webcomponent",
+    "hankchiutw-angular"
   ],
   "keywords": [
     "storybook",
