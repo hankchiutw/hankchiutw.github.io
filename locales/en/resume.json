@@ -32,7 +32,7 @@
       "company": "aetherAI",
       "website": "https://aetherai.com/",
       "thumbnail": "assets/aetherai.png",
-      "summary": "### Refactor large Angular project in terms of performance and code quality.\naetherAI provides a digital pathology system for doctors easy to work on medical images through web browsers.\n\nUse TypeScript.\n\n*Achievements*\n- Identify the key performance bottleneck of the Angular project.\n- Make the first version of PathGateway, which is an file management app made by Electron.",
+      "summary": "### Refactor large Angular project in terms of performance and code quality.\naetherAI provides a digital pathology system for doctors easy to work on medical images through web browsers.\n\nUse TypeScript.\n\n*Achievements*\n- Identify the key performance bottleneck of the Angular project.\n- Progressively refactor the messy state management(NGXS) without blocking the new feature developing. \n- Make the first version of PathGateway, which is a file management app made by Electron.",
       "position": "Senior Software Engineer, Front-end",
       "startDate": "2019-07-08"
     },

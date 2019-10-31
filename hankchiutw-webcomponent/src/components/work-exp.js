@@ -116,8 +116,8 @@ class WorkExp extends LitElement {
       :host {
         --arrow-offset: -18px;
         --dot-offset: -39px;
-        --arrow-top: 15%;
-        --dot-top: calc(15% + 20px);
+        --arrow-top: 4%;
+        --dot-top: calc(4% + 20px);
       }
 
       .box-container__box:before {
