@@ -1,6 +1,6 @@
 {
   "name": "hankchiutw.github.io",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Hank Chiu's website",
   "scripts": {
     "start": "yarn start:wc",
