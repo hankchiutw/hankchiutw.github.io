@@ -66,7 +66,7 @@ function App() {
   const basics = _("resume:basics", { returnObjects: true });
   const work = _("resume:work", { returnObjects: true });
 
-  const timelineItems = work.map((item) => ({
+  const timelineItems = work.map(item => ({
     startDate: item.startDate,
     endDate: item.endDate,
     thumbnail: item.thumbnail,
@@ -86,16 +86,16 @@ function App() {
             <UnsafeMarkdown markdown={_("about-me.detail")} />
           </SectionText>
         </SectionBox>
-        <SectionBox title={_('tech-stack.title')}>
+        <SectionBox title={_("tech-stack.title")}>
           <ShadowBox>
-            <GridBox cells={_('tech-stack.stacks', { returnObjects: true })}></GridBox>
+            <GridBox cells={_("tech-stack.stacks", { returnObjects: true })} />
           </ShadowBox>
           <SectionText>
             <UnsafeMarkdown markdown={_("tech-stack.detail")} />
           </SectionText>
         </SectionBox>
-        <SectionBox title={_('work-exp.title')}>
-          <TimeLine items={timelineItems}></TimeLine>
+        <SectionBox title={_("work-exp.title")}>
+          <TimeLine items={timelineItems} />
         </SectionBox>
         <footer>
           <SocialIcons profiles={basics.profiles} />
