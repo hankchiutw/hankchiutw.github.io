@@ -10,8 +10,8 @@
     "build:react": "yarn workspace hankchiutw-react build",
     "start:ng": "concurrently 'yarn workspace hankchiutw-angular watch' 'serve'",
     "build:ng": "yarn workspace hankchiutw-angular build",
-    "storybook": "start-storybook -s ./ -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "start-storybook -s ./ -p 6006",
+    "build:sb": "build-storybook -c .storybook -o showcases"
   },
   "private": true,
   "workspaces": [
