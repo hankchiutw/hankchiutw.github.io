@@ -8,7 +8,7 @@
     "build:wc": "yarn workspace hankchiutw-webcomponent build",
     "start:react": "concurrently 'yarn workspace hankchiutw-react watch' 'serve'",
     "build:react": "yarn workspace hankchiutw-react build",
-    "start:ng": "concurrently 'yarn workspace hankchiutw-angular watch' 'serve'",
+    "start:ng": "concurrently 'yarn workspace hankchiutw-angular watch'",
     "build:ng": "yarn workspace hankchiutw-angular build",
     "sb": "start-storybook -s ./ -p 6006",
     "build:sb": "build-storybook -c .storybook -o showcases"
