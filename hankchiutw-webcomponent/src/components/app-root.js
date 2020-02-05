@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit-element'
-import { mdToUnsafeHtml } from '../utils.js'
-import { _, i18nReady } from '../i18n.js'
+import { LitElement, html, css } from 'lit-element';
+import { mdToUnsafeHtml } from '../utils.js';
+import { _, i18nReady } from '../i18n.js';
 
 class AppRoot extends LitElement {
   static get styles() {
@@ -59,11 +59,11 @@ class AppRoot extends LitElement {
         color: var(--ultralight-font-color);
         --social-icons-hover-fg: var(--main-font-color);
       }
-    `
+    `;
   }
 
   render() {
-    const profiles = _('resume:basics.profiles', { returnObjects: true })
+    const profiles = _('resume:basics.profiles', { returnObjects: true });
     return html`
       <nav-bar></nav-bar>
       <div class="container">
@@ -79,10 +79,10 @@ class AppRoot extends LitElement {
         </section-box>
         <footer><social-icons .profiles="${profiles}"></social-icons></footer>
       </div>
-    `
+    `;
   }
 }
 
 i18nReady.then(() => {
-  customElements.define('app-root', AppRoot)
-})
+  customElements.define('app-root', AppRoot);
+});

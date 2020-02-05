@@ -1,13 +1,13 @@
-import { LitElement, html, css } from 'lit-element'
-import { _, i18nReady } from '../i18n.js'
-import './icon-font.js'
+import { LitElement, html, css } from 'lit-element';
+import { _, i18nReady } from '../i18n.js';
+import './icon-font.js';
 
 class ProfileCard extends LitElement {
   static get properties() {
     return {
       resumeJSON: { type: Object },
       imgURL: String,
-    }
+    };
   }
 
   static get styles() {
@@ -33,7 +33,7 @@ class ProfileCard extends LitElement {
         width: 100%;
         max-width: 400px;
       }
-    `
+    `;
 
     const content = css`
       .profile__content {
@@ -95,7 +95,7 @@ class ProfileCard extends LitElement {
         font-weight: 400;
         font-size: 16px;
       }
-    `
+    `;
 
     const social = css`
       .profile-social {
@@ -105,7 +105,7 @@ class ProfileCard extends LitElement {
         justify-content: center;
         color: var(--white);
       }
-    `
+    `;
 
     const media = css`
       @media (max-width: 767px) {
@@ -141,22 +141,22 @@ class ProfileCard extends LitElement {
           flex-direction: column;
         }
       }
-    `
+    `;
 
-    return [host, content, social, media]
+    return [host, content, social, media];
   }
 
   constructor() {
-    super()
-    this.resumeJSON = {}
+    super();
+    this.resumeJSON = {};
   }
 
   render() {
-    const basics = _('resume:basics', { returnObjects: true })
-    const work = _('resume:work', { returnObjects: true })
-    const { name, label, location, email, profiles } = basics || {}
-    const { postalCode, countryCode } = location || {}
-    const { company, position } = work[0]
+    const basics = _('resume:basics', { returnObjects: true });
+    const work = _('resume:work', { returnObjects: true });
+    const { name, label, location, email, profiles } = basics || {};
+    const { postalCode, countryCode } = location || {};
+    const { company, position } = work[0];
 
     const infos = Object.entries({
       location: `${countryCode}, ${postalCode}`,
@@ -168,8 +168,8 @@ class ProfileCard extends LitElement {
           <span class="profile__sub-title">${key}</span
           ><span class="profile__sub-label">${value}</span>
         </div>
-      `
-    })
+      `;
+    });
 
     return html`
       <shadow-box>
@@ -188,10 +188,10 @@ class ProfileCard extends LitElement {
           .profiles="${profiles}"
         ></social-icons>
       </shadow-box>
-    `
+    `;
   }
 }
 
 i18nReady.then(() => {
-  customElements.define('profile-card', ProfileCard)
-})
+  customElements.define('profile-card', ProfileCard);
+});

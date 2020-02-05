@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit-element';
 
 class SectionText extends LitElement {
   static get properties() {
     return {
       title: String,
-    }
+    };
   }
 
   static get styles() {
@@ -17,14 +17,14 @@ class SectionText extends LitElement {
         margin-top: 30px;
         line-height: 1.8;
       }
-    `
+    `;
   }
 
   render() {
     return html`
     <slot></slot>
-    `
+    `;
   }
 }
 
-customElements.define('section-text', SectionText)
+customElements.define('section-text', SectionText);

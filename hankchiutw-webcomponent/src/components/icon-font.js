@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit-element';
 
 class IconFont extends LitElement {
   static get properties() {
     return {
       icon: String,
-    }
+    };
   }
 
   static get styles() {
@@ -50,13 +50,13 @@ class IconFont extends LitElement {
       .icon-angular:before {
         content: "\\e900";
       }
-    `
+    `;
   }
 
   render() {
     return html`
       <div class="icon-${this.icon}"></div>
-    `
+    `;
   }
 }
-customElements.define('icon-font', IconFont)
+customElements.define('icon-font', IconFont);

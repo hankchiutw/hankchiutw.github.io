@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit-element';
 
 class ShadowBox extends LitElement {
   static get styles() {
@@ -7,14 +7,14 @@ class ShadowBox extends LitElement {
         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
         display: block;
       }
-    `
+    `;
   }
 
   render() {
     return html`
     <slot></slot>
-    `
+    `;
   }
 }
 
-customElements.define('shadow-box', ShadowBox)
+customElements.define('shadow-box', ShadowBox);

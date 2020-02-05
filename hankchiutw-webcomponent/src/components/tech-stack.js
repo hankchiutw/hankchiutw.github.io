@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
-import { mdToUnsafeHtml } from '../utils.js'
-import { _, i18nReady } from '../i18n.js'
+import { LitElement, html, css } from 'lit-element';
+import { mdToUnsafeHtml } from '../utils.js';
+import { _, i18nReady } from '../i18n.js';
 
 class TechStack extends LitElement {
   static get properties() {
-    return {}
+    return {};
   }
 
   static get styles() {
@@ -68,7 +68,7 @@ class TechStack extends LitElement {
         font-size: 16px;
         word-break: break-word;
       }
-    `
+    `;
   }
 
   render() {
@@ -84,19 +84,19 @@ class TechStack extends LitElement {
               ${mdToUnsafeHtml(detail)}
             </div>
           </div>
-        `
+        `;
       }
-    )
+    );
 
     return html`
       <shadow-box>${content}</shadow-box>
       <section-text>
         ${mdToUnsafeHtml(_('tech-stack.detail'))}
       </section-text>
-    `
+    `;
   }
 }
 
 i18nReady.then(() => {
-  customElements.define('tech-stack', TechStack)
-})
+  customElements.define('tech-stack', TechStack);
+});

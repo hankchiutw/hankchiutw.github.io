@@ -1,12 +1,12 @@
-import { LitElement, html, css } from 'lit-element'
-import { mdToUnsafeHtml } from '../utils.js'
-import { _, i18nReady } from '../i18n.js'
+import { LitElement, html, css } from 'lit-element';
+import { mdToUnsafeHtml } from '../utils.js';
+import { _, i18nReady } from '../i18n.js';
 
 class WorkExp extends LitElement {
   static get properties() {
     return {
       resumeJSON: { type: Object },
-    }
+    };
   }
 
   static get styles() {
@@ -15,7 +15,7 @@ class WorkExp extends LitElement {
         display: block;
         position: relative;
       }
-    `
+    `;
 
     const timeline = css`
       :host:before {
@@ -35,7 +35,7 @@ class WorkExp extends LitElement {
         content: "";
         display: block;
       }
-    `
+    `;
 
     const columnLayout = css`
       .box-container {
@@ -110,7 +110,7 @@ class WorkExp extends LitElement {
           margin-left: 0;
         }
       }
-    `
+    `;
 
     const arrowAndDot = css`
       :host {
@@ -188,7 +188,7 @@ class WorkExp extends LitElement {
         right: auto;
         left: var(--dot-offset);
       }
-    `
+    `;
 
     const boxContent = css`
       .box-container__date {
@@ -228,7 +228,7 @@ class WorkExp extends LitElement {
       .box-container__summary {
         text-align: left;
       }
-    `
+    `;
 
     return [
       host,
@@ -236,21 +236,19 @@ class WorkExp extends LitElement {
       columnLayout,
       arrowAndDot,
       boxContent,
-    ]
+    ];
   }
 
   constructor() {
-    super()
+    super();
   }
 
-  firstUpdated() {}
-
   _formatDate(str) {
-    return str ? str.replace('-', '.').slice(0, 7) : ''
+    return str ? str.replace('-', '.').slice(0, 7) : '';
   }
 
   render() {
-    const works = _('resume:work', { returnObjects: true })
+    const works = _('resume:work', { returnObjects: true });
     const workHtmlFactory = ({
       startDate,
       endDate,
@@ -277,13 +275,13 @@ class WorkExp extends LitElement {
           <div class="box-container__summary">${mdToUnsafeHtml(summary)}</div>
         </shadow-box>
       </div>
-    `
+    `;
     return html`
       ${works.map(workHtmlFactory)}
-    `
+    `;
   }
 }
 
 i18nReady.then(() => {
-  customElements.define('work-exp', WorkExp)
-})
+  customElements.define('work-exp', WorkExp);
+});

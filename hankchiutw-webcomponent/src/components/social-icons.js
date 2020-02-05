@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit-element';
 
 class SocialIcons extends LitElement {
   static get properties() {
     return {
       profiles: Array,
-    }
+    };
   }
 
   static get styles() {
@@ -25,7 +25,7 @@ class SocialIcons extends LitElement {
         background-color: rgba(0, 0, 0, 0.1);
         color: var(--social-icons-hover-fg);
       }
-    `
+    `;
   }
 
   render() {
@@ -37,11 +37,11 @@ class SocialIcons extends LitElement {
             </a>
           `
       )
-      : []
+      : [];
     return html`
       ${icons}
-    `
+    `;
   }
 }
 
-customElements.define('social-icons', SocialIcons)
+customElements.define('social-icons', SocialIcons);

@@ -14,12 +14,12 @@ async function getJSONMap() {
     const enMap = validNS.reduce(
       (obj, ns) => ({
         [ns]: gist.files[`${ns}.json`].raw_url,
-        ...obj
+        ...obj,
       }),
       {}
     );
     return {
-      en: enMap
+      en: enMap,
     };
   } catch (e) {
     throw new Error(`Cannot find locale files from github gists: ${e}`);
@@ -34,7 +34,7 @@ export const i18nReady = getJSONMap().then(jsonMap => {
     defaultNS: validNS[0],
     backend: {
       loadPath: (lng, ns) => jsonMap[lng][ns],
-      crossDomain: true
-    }
+      crossDomain: true,
+    },
   });
 });
