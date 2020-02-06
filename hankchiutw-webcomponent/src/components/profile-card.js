@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import { _, i18nReady } from '../i18n.js';
+import { _, i18nReady } from '../i18n';
 import './icon-font.js';
 
 class ProfileCard extends LitElement {

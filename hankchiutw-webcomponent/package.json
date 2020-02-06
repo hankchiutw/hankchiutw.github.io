@@ -2,8 +2,8 @@
   "name": "hankchiutw-webcomponent",
   "version": "0.2.2",
   "scripts": {
-    "watch": "parcel src/index.js  --public-url ../dist -d ../dist",
-    "build": "parcel build src/index.js --public-url ../dist -d ../dist"
+    "watch": "parcel src/index.ts  --public-url ../dist -d ../dist",
+    "build": "parcel build src/index.ts --public-url ../dist -d ../dist"
   },
   "private": true,
   "keywords": [

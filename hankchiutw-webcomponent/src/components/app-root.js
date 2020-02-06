@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { mdToUnsafeHtml } from '../utils.js';
-import { _, i18nReady } from '../i18n.js';
+import { _, i18nReady } from '../i18n';
 
 class AppRoot extends LitElement {
   static get styles() {
