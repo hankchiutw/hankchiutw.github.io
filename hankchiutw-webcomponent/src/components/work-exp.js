@@ -12,231 +12,143 @@ class WorkExp extends LitElement {
   static get styles() {
     const host = css`
       :host {
-        display: block;
+        display: flex;
         position: relative;
+        flex-direction: column;
+        align-items: stretch;
+        --timeline-color: #27a79a50;
+        --thumbnail-size: 60px;
+        --thumbnail-margin: 35px;
+        --thumbnail-border-size: 6px;
+        --thumbnail-padding: 2px;
+        --timeline-offset: calc(
+          (
+              var(--thumbnail-size) + var(--thumbnail-border-size) +
+                var(--thumbnail-padding)
+            ) * 0.5
+        );
+      }
+
+      .row {
+        display: flex;
+        margin-bottom: 25px;
+      }
+
+      .cell--stretch {
+        flex: 1;
+      }
+
+      @media (max-width: 767px) {
+        :host {
+          --thumbnail-size: 40px;
+          --thumbnail-margin: 14px;
+          --thumbnail-border-size: 4px;
+          --thumbnail-padding: 1px;
+        }
       }
     `;
 
     const timeline = css`
       :host:before {
-        content: "";
-        background-color: var(--main-bg-color);
-        opacity: 0.2;
-        width: 4px;
+        content: '';
+        background-color: var(--timeline-color);
+        width: var(--thumbnail-border-size);
         position: absolute;
-        left: calc(50% - 2px);
-        top: 60px;
-        bottom: 85px;
+        left: var(--timeline-offset);
+        top: 0;
+        bottom: 0;
         display: block;
-      }
-
-      :host:after {
-        clear: both;
-        content: "";
-        display: block;
+        z-index: 0;
+        border-radius: 3px;
       }
     `;
 
-    const columnLayout = css`
-      .box-container {
-        width: 50%;
-        margin-bottom: 25px;
+    const thumbnail = css`
+      .thumbnail {
+        height: var(--thumbnail-size);
+        width: var(--thumbnail-size);
+        margin-right: var(--thumbnail-margin);
+        border: solid var(--thumbnail-border-size) var(--timeline-color);
+        padding: var(--thumbnail-padding);
+        border-radius: 50%;
+        z-index: 1;
+        background-color: white;
+      }
+
+      .thumbnail img {
+        max-height: var(--thumbnail-size);
+        max-width: var(--thumbnail-size);
+        border-radius: 50%;
+      }
+    `;
+
+    const date = css`
+      .date-container {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        height: var(--thumbnail-size);
+      }
+
+      .date-container__label {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: var(--main-bg-color);
+        color: white;
+        display: inline-block;
+        padding: 0 16px;
+        border-radius: 20px;
+        height: 40px;
+        line-height: 40px;
+        position: relative;
+      }
+
+      .date-container__label:before {
+        font-size: 20px;
+        position: absolute;
+        line-height: 40px;
+        color: var(--main-bg-color);
+        content: '\\25c0';
+        left: -10px;
+        top: 0px;
+      }
+
+      @media (max-width: 767px) {
+        .date-container {
+          margin-bottom: 14px;
+        }
+
+        .date-container__label {
+          width: 100%;
+        }
+      }
+    `;
+
+    const contentBox = css`
+      .content-box {
         font-size: 16px;
-      }
-
-      .box-container:nth-child(odd) {
-        float: left;
-      }
-
-      .box-container:nth-child(even) {
-        float: right;
-      }
-
-      .box-container:nth-child(2) {
-        margin-top: 50px;
-      }
-
-      .box-container__box {
+        text-align: left;
         background-color: var(--white);
         padding: 24px;
         border-top: solid 5px var(--main-bg-color);
         position: relative;
+        border-top-right-radius: 8%;
+        border-bottom-left-radius: 8%;
       }
 
-      .box-container:nth-child(odd) .box-container__box {
-        margin-right: 35px;
-      }
-
-      .box-container:nth-child(even) .box-container__box {
-        margin-left: 35px;
-      }
-
-      .box-container:last-child {
-        float: right;
-      }
-
-      .box-container:last-child .box-container__box {
-        margin-right: auto;
-        margin-left: 35px;
-      }
-
-      @media (max-width: 767px) {
-        .box-container {
-          width: 100%;
-        }
-
-        .box-container:nth-child(odd) {
-          float: none;
-        }
-
-        .box-container:nth-child(even) {
-          float: none;
-        }
-
-        .box-container:nth-child(2) {
-          margin-top: 0;
-        }
-
-        .box-container:nth-child(odd) .box-container__box {
-          margin-right: 0;
-        }
-
-        .box-container:nth-child(even) .box-container__box {
-          margin-left: 0;
-        }
-
-        .box-container:last-child .box-container__box {
-          margin-right: 0;
-          margin-left: 0;
-        }
-      }
-    `;
-
-    const arrowAndDot = css`
-      :host {
-        --arrow-offset: -18px;
-        --dot-offset: -39px;
-        --arrow-top: 4%;
-        --dot-top: calc(4% + 20px);
-      }
-
-      .box-container__box:before {
-        font-size: 80px;
-        position: absolute;
-        line-height: 44px;
-        color: white;
-        top: var(--arrow-top);
-      }
-
-      .box-container__box:after {
-        content: "";
-        border-radius: 50%;
-        background-color: var(--main-bg-color);
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        top: var(--dot-top);
-      }
-
-      @media (max-width: 767px) {
-        .box-container__box:before {
-          display: none;
-        }
-
-        .box-container__box:after {
-          display: none;
-        }
-      }
-
-      .box-container:nth-child(odd) .box-container__box:before {
-        content: "\\276f";
-        right: var(--arrow-offset);
-      }
-
-      .box-container:nth-child(odd) .box-container__box:after {
-        right: var(--dot-offset);
-      }
-
-      .box-container:nth-child(even) .box-container__box:before {
-        content: "\\276e";
-        left: var(--arrow-offset);
-      }
-
-      .box-container:nth-child(even) .box-container__box:after {
-        left: var(--dot-offset);
-      }
-
-      .box-container:first-child .box-container__box:before {
-        top: 35px;
-      }
-
-      .box-container:first-child .box-container__box:after {
-        top: 55px;
-      }
-
-      .box-container:last-child .box-container__box:before {
-        top: auto;
-        bottom: 35px;
-        content: "\\276e";
-        right: auto;
-        left: var(--arrow-offset);
-      }
-
-      .box-container:last-child .box-container__box:after {
-        top: auto;
-        bottom: 55px;
-        right: auto;
-        left: var(--dot-offset);
-      }
-    `;
-
-    const boxContent = css`
-      .box-container__date {
-        font-weight: 700;
+      .content-box__company {
+        font-size: 24px;
+        font-weight: bold;
         color: var(--main-bg-color);
       }
 
-      .box-container__head {
-        margin-top: 20px;
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        text-align: left;
-      }
-
-      .box-container__thumbnail {
-        height: 60px;
-        width: 60px;
-        margin-right: 20px;
-      }
-
-      .box-container__thumbnail img {
-        max-height: 60px;
-        max-width: 60px;
-      }
-
-      .box-container__company {
-        font-size: 20px;
-      }
-
-      .box-container__position {
+      .content-box__position {
         text-transform: uppercase;
         margin-top: 10px;
       }
-
-      .box-container__summary {
-        text-align: left;
-      }
     `;
 
-    return [
-      host,
-      timeline,
-      columnLayout,
-      arrowAndDot,
-      boxContent,
-    ];
+    return [host, timeline, thumbnail, date, contentBox];
   }
 
   constructor() {
@@ -258,22 +170,27 @@ class WorkExp extends LitElement {
       summary,
       position,
     }) => html`
-      <div class="box-container">
-        <shadow-box class="box-container__box">
-          <div class="box-container__date">
-            ${this._formatDate(startDate)} - ${this._formatDate(endDate)}
-          </div>
-          <div class="box-container__head">
-            <a class="box-container__thumbnail" href="${website}" style=${website ? '' : 'pointer-events: none'} target="_blank">
-              <img src="${thumbnail}" />
-            </a>
-            <div>
-              <div class="box-container__company">${company}</div>
-              <div class="box-container__position">${position}</div>
+      <div class="row">
+        <a
+          class="thumbnail"
+          href="${website}"
+          style=${website ? '' : 'pointer-events: none'}
+          target="_blank"
+        >
+          <img src="${thumbnail}" />
+        </a>
+        <div class="cell--stretch">
+          <div class="date-container">
+            <div class="date-container__label">
+              ${this._formatDate(startDate)} - ${this._formatDate(endDate)}
             </div>
           </div>
-          <div class="box-container__summary">${mdToUnsafeHtml(summary)}</div>
-        </shadow-box>
+          <shadow-box class="content-box">
+            <div class="content-box__company">${company}</div>
+            <div class="content-box__position">${position}</div>
+            <div class="content-box__summary">${mdToUnsafeHtml(summary)}</div>
+          </shadow-box>
+        </div>
       </div>
     `;
     return html`
