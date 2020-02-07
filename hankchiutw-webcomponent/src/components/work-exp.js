@@ -132,8 +132,6 @@ class WorkExp extends LitElement {
         padding: 24px;
         border-top: solid 5px var(--main-bg-color);
         position: relative;
-        border-top-right-radius: 8%;
-        border-bottom-left-radius: 8%;
       }
 
       .content-box__company {
