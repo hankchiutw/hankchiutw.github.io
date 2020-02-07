@@ -4,6 +4,8 @@
   "description": "Hank Chiu's website",
   "scripts": {
     "start": "yarn start:wc",
+    "build": "yarn build:wc",
+    "release": "release-it --ci --no-git.push --no-git.requireCleanWorkingDir",
     "start:wc": "concurrently 'yarn workspace hankchiutw-webcomponent watch' 'serve'",
     "build:wc": "yarn workspace hankchiutw-webcomponent build",
     "start:react": "concurrently 'yarn workspace hankchiutw-react watch' 'serve'",
