@@ -8,7 +8,7 @@ import SectionText from "./shared/SectionText";
 import UnsafeMarkdown from "./shared/UnsafeMarkdown";
 import GridBox from "./shared/GridBox";
 import TimeLine from "./shared/TimeLine";
-import { _ } from "./i18n.js";
+import { _ } from "libs/i18n";
 
 const Container = styled.div`
   width: 100%;
