@@ -1,11 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
 
+interface Profile {
+  network: string;
+  url: string;
+}
+
 class SocialIcons extends LitElement {
-  static get properties() {
-    return {
-      profiles: Array,
-    };
-  }
+  profiles = [];
 
   static get styles() {
     return css`

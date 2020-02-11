@@ -1,14 +1,10 @@
 import { LitElement, html, css } from 'lit-element';
-import { _, i18nReady } from '../i18n';
+import { _, i18nReady } from 'libs/i18n';
 import './icon-font.js';
 
 class ProfileCard extends LitElement {
-  static get properties() {
-    return {
-      resumeJSON: { type: Object },
-      imgURL: String,
-    };
-  }
+  resumeJSON = {};
+  imgURL = '';
 
   static get styles() {
     const host = css`

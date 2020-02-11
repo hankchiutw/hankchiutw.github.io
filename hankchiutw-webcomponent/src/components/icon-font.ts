@@ -1,11 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 
 class IconFont extends LitElement {
-  static get properties() {
-    return {
-      icon: String,
-    };
-  }
+  icon = '';
 
   static get styles() {
     return css`

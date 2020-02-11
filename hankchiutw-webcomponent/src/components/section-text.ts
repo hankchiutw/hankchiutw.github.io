@@ -1,11 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 
 class SectionText extends LitElement {
-  static get properties() {
-    return {
-      title: String,
-    };
-  }
+  title = '';
 
   static get styles() {
     return css`
