@@ -2,13 +2,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
+    "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": true,
     "module": "commonjs",
+    "moduleResolution": "node",
     "target": "es6",
     "noImplicitAny": false,
-    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true,
     "paths": {
       "~*": ["./*"]
     }
-  }
+  },
+  "include": ["hankchiutw-react/src/**/*", "hankchiutw-webcomponent/src/**/*"],
+  "exclude": ["node_modules"]
 }
