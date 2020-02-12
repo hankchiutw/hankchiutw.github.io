@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { _, i18nReady } from 'libs/i18n';
 import { ProfileBasics } from 'features/resume/resume.model';
-import './icon-font.js';
+import './icon-font';
 
 class ProfileCard extends LitElement {
   resumeJSON = {};

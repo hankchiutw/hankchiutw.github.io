@@ -5,6 +5,9 @@
     "watch": "parcel src/index.ts  --public-url ../dist -d ../dist",
     "build": "parcel build src/index.ts --public-url ../dist -d ../dist"
   },
+  "alias": {
+    "libs": "../libs"
+  },
   "private": true,
   "keywords": [
     "storybook",

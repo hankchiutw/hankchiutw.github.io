@@ -5,6 +5,7 @@
   "scripts": {
     "start": "yarn start:wc",
     "build": "yarn build:wc",
+    "lint": "tsc",
     "release": "release-it --ci --no-git.push --no-git.requireCleanWorkingDir",
     "start:wc": "concurrently 'yarn workspace hankchiutw-webcomponent watch' 'serve'",
     "build:wc": "yarn workspace hankchiutw-webcomponent build",
