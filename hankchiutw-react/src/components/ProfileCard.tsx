@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import SocialIcons from "./SocialIcons";
-import ShadowBox from "../shared/ShadowBox";
+import React from 'react';
+import styled from 'styled-components';
+import SocialIcons from './SocialIcons';
+import ShadowBox from '../shared/ShadowBox';
 
 const profileContentStyle = `
   .profile__content {
@@ -136,14 +136,34 @@ const Container = styled(ShadowBox)`
   }
 `;
 
-function ProfileCard({ basics, work, imgURL }) {
-  const { name, label, location, email, profiles } = basics || {};
-  const { postalCode, countryCode } = location || {};
+interface Profile {
+  basics: ProfileBasics;
+  work: any;
+  imgURL: string;
+}
+
+interface ProfileBasics {
+  name: string;
+  label: string;
+  location: any;
+  email: string;
+  profiles: any;
+}
+
+function ProfileCard({ basics, work, imgURL }: Profile) {
+  const {
+    name = '',
+    label = '',
+    location = {},
+    email = '',
+    profiles = {}
+  } = basics;
+  const { postalCode, countryCode } = location;
   const { company, position } = work[0];
 
   const infos = Object.entries({
     location: `${countryCode}, ${postalCode}`,
-    "e-mail": email,
+    'e-mail': email,
     current: `${position}, ${company}`
   }).map(([key, value]) => {
     return (

@@ -147,7 +147,12 @@ const Container = styled.div`
   ${arrowAndDot}
 `;
 
-function TimeLine({ className, items }) {
+interface Props {
+  className?: string;
+  items: any;
+}
+
+function TimeLine({ className, items }: Props) {
   const content = items.map(item => {
     return (
       <ShadowBox className="box-container" key={item.startDate}>

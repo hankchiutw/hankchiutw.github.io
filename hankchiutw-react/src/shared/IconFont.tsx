@@ -13,7 +13,11 @@ const contentMap = {
   angular: "\\e900"
 };
 
-export default styled.div`
+interface Props {
+  icon: string;
+}
+
+export default styled.div<Props>`
   font-family: "icomoon" !important;
   width: 100%;
   height: 100%;

@@ -21,7 +21,12 @@ const Container = styled.div`
   }
 `;
 
-function SocialIcons({ className, profiles }) {
+interface Props {
+  className?: string;
+  profiles: any;
+}
+
+function SocialIcons({ className, profiles }: Props) {
   return (
     <Container className={className}>
       {profiles

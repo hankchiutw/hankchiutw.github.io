@@ -75,9 +75,13 @@ const Container = styled.div`
   }
 `;
 
-export default class extends Component {
-  constructor() {
-    super();
+interface State {
+  opened: boolean;
+}
+
+export default class extends Component<{}, State> {
+  constructor(props) {
+    super(props);
     this.state = {
       opened: false
     };

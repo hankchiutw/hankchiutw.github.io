@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import IconFont from "./IconFont";
-import UnsafeMarkdown from "./UnsafeMarkdown";
+import React from 'react';
+import styled from 'styled-components';
+import IconFont from './IconFont';
+import UnsafeMarkdown from './UnsafeMarkdown';
 
 const Container = styled.div`
   text-align: left;
@@ -58,7 +58,19 @@ const Container = styled.div`
   }
 `;
 
-function GridBox({ className, cells }) {
+interface Props {
+  className?: string;
+  cells: Cell[];
+}
+
+interface Cell {
+  icon: string;
+  title: string;
+  subTitle: string;
+  detail: string;
+}
+
+const GridBox = ({ className, cells }: Props) => {
   const content = cells.map(({ icon, title, subTitle, detail }) => {
     return (
       <div className="cell" key={title}>
@@ -71,6 +83,6 @@ function GridBox({ className, cells }) {
     );
   });
   return <Container className={className}>{content}</Container>;
-}
+};
 
 export default GridBox;
