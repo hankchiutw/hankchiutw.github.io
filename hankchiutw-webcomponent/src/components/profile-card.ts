@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { _, i18nReady } from 'libs/i18n';
+import { ProfileBasics } from 'features/resume/resume.model';
 import './icon-font.js';
 
 class ProfileCard extends LitElement {
@@ -47,7 +48,7 @@ class ProfileCard extends LitElement {
       }
 
       .profile__content:before {
-        content: "HELLO";
+        content: 'HELLO';
         color: var(--white);
         font-size: 14px;
         font-weight: 700;
@@ -56,7 +57,7 @@ class ProfileCard extends LitElement {
       }
 
       .profile__title:before {
-        content: "";
+        content: '';
         border-left: solid 8px var(--main-bg-color);
         border-bottom: solid 8px transparent;
         display: block;
@@ -148,10 +149,16 @@ class ProfileCard extends LitElement {
   }
 
   render() {
-    const basics = _('resume:basics', { returnObjects: true });
+    const basics: ProfileBasics = _('resume:basics', { returnObjects: true });
     const work = _('resume:work', { returnObjects: true });
-    const { name, label, location, email, profiles } = basics || {};
-    const { postalCode, countryCode } = location || {};
+    const {
+      name = '',
+      label = '',
+      location = {},
+      email = '',
+      profiles = {},
+    } = basics;
+    const { postalCode, countryCode } = location;
     const { company, position } = work[0];
 
     const infos = Object.entries({

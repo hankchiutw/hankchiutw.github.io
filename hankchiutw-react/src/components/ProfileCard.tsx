@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
 import ShadowBox from '../shared/ShadowBox';
+import { Profile } from 'features/resume/resume.model';
 
 const profileContentStyle = `
   .profile__content {
@@ -136,19 +137,6 @@ const Container = styled(ShadowBox)`
   }
 `;
 
-interface Profile {
-  basics: ProfileBasics;
-  work: any;
-  imgURL: string;
-}
-
-interface ProfileBasics {
-  name: string;
-  label: string;
-  location: any;
-  email: string;
-  profiles: any;
-}
 
 function ProfileCard({ basics, work, imgURL }: Profile) {
   const {
