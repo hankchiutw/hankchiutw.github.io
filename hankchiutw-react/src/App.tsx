@@ -7,7 +7,7 @@ import SectionBox from "./shared/SectionBox";
 import SectionText from "./shared/SectionText";
 import UnsafeMarkdown from "./shared/UnsafeMarkdown";
 import GridBox from "./shared/GridBox";
-import TimeLine from "./shared/TimeLine";
+import TimeLine from "./components/TimeLine";
 import { _ } from "libs/i18n";
 
 const Container = styled.div`

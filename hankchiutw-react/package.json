@@ -12,6 +12,7 @@
     "build": "parcel build src/index.tsx --public-url ../dist -d ../dist"
   },
   "alias": {
+    "hc-react": "./src",
     "libs": "../libs"
   },
   "eslintConfig": {

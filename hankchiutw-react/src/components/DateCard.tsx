@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import UnsafeMarkdown from "./UnsafeMarkdown";
+import UnsafeMarkdown from "hc-react/shared/UnsafeMarkdown";
 
 const Container = styled.div`
   font-size: 16px;

@@ -13,7 +13,8 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "paths": {
-      "~*": ["./*"]
+      "~*": ["./*"],
+      "hc-react/*": ["./hankchiutw-react/src/*"]
     }
   },
   "include": ["hankchiutw-react/src/**/*", "hankchiutw-webcomponent/src/**/*"],

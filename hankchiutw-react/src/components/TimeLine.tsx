@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DateCard from "./DateCard";
-import ShadowBox from "./ShadowBox";
+import ShadowBox from "hc-react/shared/ShadowBox";
 
 const layoutStyle = `
   .box-container {
