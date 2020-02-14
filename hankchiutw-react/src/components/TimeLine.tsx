@@ -151,7 +151,7 @@ export function TimeLine({ className, items }: Props) {
       thumbnail,
       title,
       subTitle,
-      content
+      content,
     } = item;
     return (
       <Row key={startDate}>

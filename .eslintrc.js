@@ -2,7 +2,8 @@
 Required modules for this config:
 yarn add -D\
   eslint\
-  @typescript-eslint
+  @typescript-eslint\
+  eslint-plugin-react
 */
 module.exports = {
   root: true,
@@ -18,6 +19,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
   ],
   overrides: [
     {

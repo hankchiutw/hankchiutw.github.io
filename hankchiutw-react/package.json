@@ -15,9 +15,6 @@
     "hc-react": "./src",
     "libs": "../libs"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
