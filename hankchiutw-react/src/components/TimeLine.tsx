@@ -1,166 +1,181 @@
-import React from "react";
-import styled from "styled-components";
-import DateCard from "./DateCard";
-import ShadowBox from "hc-react/shared/ShadowBox";
+import React from 'react';
+import styled from 'styled-components';
+import UnsafeMarkdown from 'hc-react/shared/UnsafeMarkdown';
+import ShadowBox from 'hc-react/shared/ShadowBox';
 
-const layoutStyle = `
-  .box-container {
-    width: calc(50% - 35px);
-    margin-bottom: 25px;
-    position: relative;
+const Row = styled.div`
+  display: flex;
+  margin-bottom: 25px;
+`;
+
+const ThumbnailAnchor = styled.a`
+  height: var(--thumbnail-size);
+  width: var(--thumbnail-size);
+  margin-right: var(--thumbnail-margin);
+  border: solid var(--thumbnail-border-size) var(--timeline-color);
+  padding: var(--thumbnail-padding);
+  border-radius: 50%;
+  z-index: 1;
+  background-color: white;
+
+  & img {
+    max-height: var(--thumbnail-size);
+    max-width: var(--thumbnail-size);
+    border-radius: 50%;
   }
 
-  .box-container:nth-child(odd) {
-    float: left;
-  }
+  pointerevents: ${props => (props.href ? 'auto' : 'none')};
+`;
 
-  .box-container:nth-child(even) {
-    float: right;
-  }
+const StretchItem = styled.div`
+  flex: 1;
+`;
 
-  .box-container:nth-child(2) {
-    margin-top: 50px;
-  }
-
-  .box-container:last-child {
-    float: right;
-  }
+const DateWidget = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  height: var(--thumbnail-size);
 
   @media (max-width: 767px) {
-    .box-container {
-      width: 100%;
-    }
-
-    .box-container:nth-child(odd) {
-      float: none;
-    }
-
-    .box-container:nth-child(even) {
-      float: none;
-    }
-
-    .box-container:nth-child(2) {
-      margin-top: 0;
-    }
+    margin-bottom: 14px;
   }
 `;
 
-const arrowAndDot = `
-  --arrow-offset: -18px;
-  --dot-offset: -39px;
-  --arrow-top: 4%;
-  --dot-top: calc(4% + 20px);
+const DateLabel = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--main-bg-color);
+  color: white;
+  display: inline-block;
+  padding: 0 16px;
+  border-radius: 20px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
 
-  .box-container:before {
-    font-size: 80px;
+  &:before {
+    font-size: 20px;
     position: absolute;
-    line-height: 44px;
-    color: white;
-    top: var(--arrow-top);
-  }
-
-  .box-container:after {
-    content: "";
-    border-radius: 50%;
-    background-color: var(--main-bg-color);
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    top: var(--dot-top);
+    line-height: 40px;
+    color: var(--main-bg-color);
+    content: '\\25c0';
+    left: -10px;
+    top: 0px;
   }
 
   @media (max-width: 767px) {
-    .box-container:before {
-      display: none;
-    }
-
-    .box-container:after {
-      display: none;
-    }
+    width: 100%;
   }
+`;
 
-  .box-container:nth-child(odd):before {
-    content: "\\276f";
-    right: var(--arrow-offset);
-  }
+const Content = styled(ShadowBox)`
+  font-size: 16px;
+  text-align: left;
+  background-color: var(--white);
+  padding: 24px;
+  border-top: solid 5px var(--main-bg-color);
+  position: relative;
+`;
 
-  .box-container:nth-child(odd):after {
-    right: var(--dot-offset);
-  }
+const Title = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--main-bg-color);
+`;
 
-  .box-container:nth-child(even):before {
-    content: "\\276e";
-    left: var(--arrow-offset);
-  }
-
-  .box-container:nth-child(even):after {
-    left: var(--dot-offset);
-  }
-
-  .box-container:first-child:before {
-    top: 35px;
-  }
-
-  .box-container:first-child:after {
-    top: 55px;
-  }
-
-  .box-container:last-child:before {
-    top: auto;
-    bottom: 35px;
-    content: "\\276e";
-    right: auto;
-    left: var(--arrow-offset);
-  }
-
-  .box-container:last-child:after {
-    top: auto;
-    bottom: 55px;
-    right: auto;
-    left: var(--dot-offset);
-  }
-`
+const SubTitle = styled.div`
+  text-transform: uppercase;
+  margin-top: 10px;
+`;
 
 const Container = styled.div`
-  display: block;
+  display: flex;
   position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  --timeline-color: #27a79a50;
+  --thumbnail-size: 60px;
+  --thumbnail-margin: 35px;
+  --thumbnail-border-size: 6px;
+  --thumbnail-padding: 2px;
+  --timeline-offset: calc(
+    (
+        var(--thumbnail-size) + var(--thumbnail-border-size) +
+          var(--thumbnail-padding)
+      ) * 0.5
+  );
 
-  :before {
-    content: "";
-    background-color: var(--main-bg-color);
-    opacity: 0.2;
-    width: 4px;
+  @media (max-width: 767px) {
+    --thumbnail-size: 40px;
+    --thumbnail-margin: 14px;
+    --thumbnail-border-size: 4px;
+    --thumbnail-padding: 1px;
+  }
+
+  &:before {
+    content: '';
+    background-color: var(--timeline-color);
+    width: var(--thumbnail-border-size);
     position: absolute;
-    left: calc(50% - 2px);
-    top: 60px;
-    bottom: 85px;
+    left: var(--timeline-offset);
+    top: 0;
+    bottom: 0;
     display: block;
+    z-index: 0;
+    border-radius: 3px;
   }
-
-  :after {
-    clear: both;
-    content: "";
-    display: block;
-  }
-
-  ${layoutStyle}
-  ${arrowAndDot}
 `;
 
 interface Props {
   className?: string;
-  items: any;
+  items: TimeLineItem[];
 }
 
-function TimeLine({ className, items }: Props) {
+export interface TimeLineItem {
+  startDate: string;
+  endDate?: string;
+  thumbnail: string;
+  link: string;
+  title: string;
+  subTitle: string;
+  content: string;
+}
+
+export function TimeLine({ className, items }: Props) {
   const content = items.map(item => {
+    const {
+      startDate,
+      endDate,
+      link,
+      thumbnail,
+      title,
+      subTitle,
+      content
+    } = item;
     return (
-      <ShadowBox className="box-container" key={item.startDate}>
-        <DateCard {...item} />
-      </ShadowBox>
+      <Row key={startDate}>
+        <ThumbnailAnchor href={link} target="_blank" rel="noopener noreferrer">
+          <img src={thumbnail} alt={link} />
+        </ThumbnailAnchor>
+        <StretchItem>
+          <DateWidget>
+            <DateLabel>
+              {_formatDate(startDate)} - {_formatDate(endDate)}
+            </DateLabel>
+          </DateWidget>
+          <Content>
+            <Title>{title}</Title>
+            <SubTitle>{subTitle}</SubTitle>
+            <UnsafeMarkdown markdown={content} />
+          </Content>
+        </StretchItem>
+      </Row>
     );
   });
   return <Container className={className}>{content}</Container>;
 }
 
-export default TimeLine;
+function _formatDate(str) {
+  return str ? str.replace('-', '.').slice(0, 7) : '';
+}

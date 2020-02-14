@@ -7,8 +7,9 @@ import SectionBox from "./shared/SectionBox";
 import SectionText from "./shared/SectionText";
 import UnsafeMarkdown from "./shared/UnsafeMarkdown";
 import GridBox from "./shared/GridBox";
-import TimeLine from "./components/TimeLine";
+import { TimeLine, TimeLineItem } from "./components/TimeLine";
 import { _ } from "libs/i18n";
+import { ResumeWork } from 'features/resume/resume.model';
 
 const Container = styled.div`
   width: 100%;
@@ -64,9 +65,9 @@ const NavBar = styled.div`
 
 function App() {
   const basics = _("resume:basics", { returnObjects: true });
-  const work = _("resume:work", { returnObjects: true });
+  const work: ResumeWork[] = _("resume:work", { returnObjects: true });
 
-  const timelineItems = work.map(item => ({
+  const timelineItems: TimeLineItem[] = work.map(item => ({
     startDate: item.startDate,
     endDate: item.endDate,
     thumbnail: item.thumbnail,
