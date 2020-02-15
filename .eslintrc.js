@@ -3,7 +3,8 @@ Required modules for this config:
 yarn add -D\
   eslint\
   @typescript-eslint\
-  eslint-plugin-react
+  eslint-plugin-react\
+  eslint-plugin-import
 */
 module.exports = {
   root: true,
@@ -14,7 +15,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -32,5 +33,11 @@ module.exports = {
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
     semi: ['warn', 'always'],
+    'import/order': [
+      'warn',
+      {
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
   },
 };

@@ -1,7 +1,7 @@
+import ShadowBox from 'hc-react/shared/ShadowBox';
+import UnsafeMarkdown from 'hc-react/shared/UnsafeMarkdown';
 import React from 'react';
 import styled from 'styled-components';
-import UnsafeMarkdown from 'hc-react/shared/UnsafeMarkdown';
-import ShadowBox from 'hc-react/shared/ShadowBox';
 
 const Row = styled.div`
   display: flex;
