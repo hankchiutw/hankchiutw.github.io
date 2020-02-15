@@ -11,13 +11,13 @@ interface Props {
 
 function UnsafeMarkdown({
   className,
-  markdown
+  markdown,
 }: Props) {
   return (
     <div
       className={className}
       dangerouslySetInnerHTML={{
-        __html: mdConverter.makeHtml(markdown)
+        __html: mdConverter.makeHtml(markdown),
       }}
     />
   );

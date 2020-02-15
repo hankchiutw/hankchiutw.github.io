@@ -1,15 +1,15 @@
+import { ResumeWork } from 'features/resume/resume.model';
+import { _ } from "libs/i18n";
 import React from "react";
 import styled from "styled-components";
-import SocialIcons from "./components/SocialIcons";
 import ProfileCard from "./components/ProfileCard";
-import ShadowBox from "./shared/ShadowBox";
+import SocialIcons from "./components/SocialIcons";
+import { TimeLine, TimeLineItem } from "./components/TimeLine";
+import GridBox from "./shared/GridBox";
 import SectionBox from "./shared/SectionBox";
 import SectionText from "./shared/SectionText";
+import ShadowBox from "./shared/ShadowBox";
 import UnsafeMarkdown from "./shared/UnsafeMarkdown";
-import GridBox from "./shared/GridBox";
-import { TimeLine, TimeLineItem } from "./components/TimeLine";
-import { _ } from "libs/i18n";
-import { ResumeWork } from 'features/resume/resume.model';
 
 const Container = styled.div`
   width: 100%;
@@ -74,7 +74,7 @@ function App() {
     link: item.website,
     title: item.company,
     subTitle: item.position,
-    content: item.summary
+    content: item.summary,
   }));
 
   return (

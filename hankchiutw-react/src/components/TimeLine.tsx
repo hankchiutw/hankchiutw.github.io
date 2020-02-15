@@ -3,6 +3,10 @@ import UnsafeMarkdown from 'hc-react/shared/UnsafeMarkdown';
 import React from 'react';
 import styled from 'styled-components';
 
+function _formatDate(str) {
+  return str ? str.replace('-', '.').slice(0, 7) : '';
+}
+
 const Row = styled.div`
   display: flex;
   margin-bottom: 25px;
@@ -174,8 +178,4 @@ export function TimeLine({ className, items }: Props) {
     );
   });
   return <Container className={className}>{content}</Container>;
-}
-
-function _formatDate(str) {
-  return str ? str.replace('-', '.').slice(0, 7) : '';
 }

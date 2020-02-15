@@ -1,6 +1,6 @@
+import { _, i18nReady } from 'libs/i18n';
 import { LitElement, html, css } from 'lit-element';
 import { mdToUnsafeHtml } from '../utils';
-import { _, i18nReady } from 'libs/i18n';
 
 class TechStack extends LitElement {
   static get properties() {

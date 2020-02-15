@@ -83,7 +83,7 @@ export default class extends Component<{}, State> {
   constructor(props) {
     super(props);
     this.state = {
-      opened: false
+      opened: false,
     };
 
     this.toggle = this.toggle.bind(this);
@@ -91,7 +91,7 @@ export default class extends Component<{}, State> {
 
   toggle() {
     this.setState({
-      opened: !this.state.opened
+      opened: !this.state.opened,
     });
   }
 

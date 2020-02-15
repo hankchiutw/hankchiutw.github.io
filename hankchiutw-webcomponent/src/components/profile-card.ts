@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
-import { _, i18nReady } from 'libs/i18n';
 import { ProfileBasics } from 'features/resume/resume.model';
+import { _, i18nReady } from 'libs/i18n';
+import { LitElement, html, css } from 'lit-element';
 import './icon-font';
 
 class ProfileCard extends LitElement {

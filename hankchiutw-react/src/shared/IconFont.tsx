@@ -10,7 +10,7 @@ const contentMap = {
   github: "\\eab0",
   linkedin: "\\eaca",
   stackoverflow: "\\ead0",
-  angular: "\\e900"
+  angular: "\\e900",
 };
 
 interface Props {

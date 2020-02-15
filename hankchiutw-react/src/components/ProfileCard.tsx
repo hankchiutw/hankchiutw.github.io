@@ -1,8 +1,8 @@
+import { Profile } from 'features/resume/resume.model';
 import React from 'react';
 import styled from 'styled-components';
-import SocialIcons from './SocialIcons';
 import ShadowBox from '../shared/ShadowBox';
-import { Profile } from 'features/resume/resume.model';
+import SocialIcons from './SocialIcons';
 
 const profileContentStyle = `
   .profile__content {
@@ -144,7 +144,7 @@ function ProfileCard({ basics, work, imgURL }: Profile) {
     label = '',
     location = {},
     email = '',
-    profiles = {}
+    profiles = {},
   } = basics;
   const { postalCode, countryCode } = location;
   const { company, position } = work[0];
@@ -152,7 +152,7 @@ function ProfileCard({ basics, work, imgURL }: Profile) {
   const infos = Object.entries({
     location: `${countryCode}, ${postalCode}`,
     'e-mail': email,
-    current: `${position}, ${company}`
+    current: `${position}, ${company}`,
   }).map(([key, value]) => {
     return (
       <div className="profile__row" key={key}>
