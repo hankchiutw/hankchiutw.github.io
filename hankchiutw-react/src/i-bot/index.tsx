@@ -79,7 +79,7 @@ interface State {
   opened: boolean;
 }
 
-export default class extends Component<{}, State> {
+export default class IBot extends Component<{}, State> {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import IconFont from "../shared/IconFont";
+import { Profile } from 'features/resume/resume.model';
+import React from 'react';
+import styled from 'styled-components';
+import IconFont from '../shared/IconFont';
 
 const Container = styled.div`
   a {
@@ -23,7 +24,7 @@ const Container = styled.div`
 
 interface Props {
   className?: string;
-  profiles: any;
+  profiles: Profile[];
 }
 
 function SocialIcons({ className, profiles }: Props) {

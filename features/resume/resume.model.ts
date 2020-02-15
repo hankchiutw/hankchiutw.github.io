@@ -1,15 +1,15 @@
-export interface Profile {
-  basics: ProfileBasics;
+export interface Resume {
+  basics: ResumeBasics;
   work: ResumeWork[];
   imgURL: string;
 }
 
-export interface ProfileBasics {
+export interface ResumeBasics {
   name: string;
   label: string;
-  location: any;
+  location: Location;
   email: string;
-  profiles: any;
+  profiles: Profile[];
 }
 
 export interface ResumeWork {
@@ -20,4 +20,15 @@ export interface ResumeWork {
   thumbnail: string;
   position: string;
   summary: string;
+}
+
+export interface Location {
+  postalCode: string;
+  countryCode: string;
+}
+
+export interface Profile {
+  network: string;
+  username: string;
+  url: string;
 }

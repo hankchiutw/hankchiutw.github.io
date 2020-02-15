@@ -1,4 +1,4 @@
-import { ProfileBasics } from 'features/resume/resume.model';
+import { ResumeBasics, Location } from 'features/resume/resume.model';
 import { _, i18nReady } from 'libs/i18n';
 import { LitElement, html, css } from 'lit-element';
 import './icon-font';
@@ -149,7 +149,7 @@ class ProfileCard extends LitElement {
   }
 
   render() {
-    const basics: ProfileBasics = _('resume:basics', { returnObjects: true });
+    const basics: ResumeBasics = _('resume:basics', { returnObjects: true });
     const work = _('resume:work', { returnObjects: true });
     const {
       name = '',
@@ -158,7 +158,7 @@ class ProfileCard extends LitElement {
       email = '',
       profiles = {},
     } = basics;
-    const { postalCode, countryCode } = location;
+    const { postalCode, countryCode } = location as Location;
     const { company, position } = work[0];
 
     const infos = Object.entries({

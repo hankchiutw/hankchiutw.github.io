@@ -1,4 +1,4 @@
-import { Profile } from 'features/resume/resume.model';
+import { Resume, Location } from 'features/resume/resume.model';
 import React from 'react';
 import styled from 'styled-components';
 import ShadowBox from '../shared/ShadowBox';
@@ -137,16 +137,15 @@ const Container = styled(ShadowBox)`
   }
 `;
 
-
-function ProfileCard({ basics, work, imgURL }: Profile) {
+function ProfileCard({ basics, work, imgURL }: Resume) {
   const {
     name = '',
     label = '',
     location = {},
     email = '',
-    profiles = {},
+    profiles = [],
   } = basics;
-  const { postalCode, countryCode } = location;
+  const { postalCode, countryCode } = location as Location;
   const { company, position } = work[0];
 
   const infos = Object.entries({
@@ -170,7 +169,7 @@ function ProfileCard({ basics, work, imgURL }: Profile) {
         </div>
         <div className="profile__content">
           <div className="profile__title">
-            I'm <span>{name}</span>
+            I&apos;m <span>{name}</span>
             <div className="profile__label">{label}</div>
           </div>
           <div className="profile__info">{infos}</div>
