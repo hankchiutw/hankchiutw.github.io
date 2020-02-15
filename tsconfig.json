@@ -9,7 +9,7 @@
     "checkJs": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es5",
     "noImplicitAny": false,
     "skipLibCheck": true,
     "paths": {
