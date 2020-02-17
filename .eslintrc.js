@@ -2,7 +2,8 @@
 Required modules for this config:
 yarn add -D\
   eslint\
-  @typescript-eslint\
+  @typescript-eslint/parser\
+  @typescript-eslint/eslint-pluin\
   eslint-plugin-react\
   eslint-plugin-import
 */
