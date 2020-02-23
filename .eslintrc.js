@@ -3,7 +3,7 @@ Required modules for this config:
 yarn add -D\
   eslint\
   @typescript-eslint/parser\
-  @typescript-eslint/eslint-pluin\
+  @typescript-eslint/eslint-plugin\
   eslint-plugin-react\
   eslint-plugin-import
 */
