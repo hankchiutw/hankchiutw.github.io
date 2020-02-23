@@ -1,15 +1,16 @@
 import { ResumeWork } from 'features/resume/resume.model';
-import { _ } from "libs/i18n";
-import React from "react";
-import styled from "styled-components";
-import ProfileCard from "./components/ProfileCard";
-import SocialIcons from "./components/SocialIcons";
-import { TimeLine, TimeLineItem } from "./components/TimeLine";
-import GridBox from "./shared/GridBox";
-import SectionBox from "./shared/SectionBox";
-import SectionText from "./shared/SectionText";
-import ShadowBox from "./shared/ShadowBox";
-import UnsafeMarkdown from "./shared/UnsafeMarkdown";
+import { _ } from 'libs/i18n';
+import React from 'react';
+import styled from 'styled-components';
+import GithubCorner from './components/GithubCorner';
+import ProfileCard from './components/ProfileCard';
+import SocialIcons from './components/SocialIcons';
+import { TimeLine, TimeLineItem } from './components/TimeLine';
+import GridBox from './shared/GridBox';
+import SectionBox from './shared/SectionBox';
+import SectionText from './shared/SectionText';
+import ShadowBox from './shared/ShadowBox';
+import UnsafeMarkdown from './shared/UnsafeMarkdown';
 
 const Container = styled.div`
   width: 100%;
@@ -17,7 +18,7 @@ const Container = styled.div`
   display: block;
 
   :before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +31,7 @@ const Container = styled.div`
   }
 
   :after {
-    content: "";
+    content: '';
     position: absolute;
     z-index: 1;
     top: 0;
@@ -64,8 +65,8 @@ const NavBar = styled.div`
 `;
 
 function App() {
-  const basics = _("resume:basics", { returnObjects: true });
-  const work: ResumeWork[] = _("resume:work", { returnObjects: true });
+  const basics = _('resume:basics', { returnObjects: true });
+  const work: ResumeWork[] = _('resume:work', { returnObjects: true });
 
   const timelineItems: TimeLineItem[] = work.map(item => ({
     startDate: item.startDate,
@@ -79,23 +80,24 @@ function App() {
 
   return (
     <Container>
+      <GithubCorner />
       <NavBar />
       <div className="container">
         <ProfileCard basics={basics} work={work} imgURL="assets/portrait.png" />
-        <SectionBox title={_("about-me.title")}>
+        <SectionBox title={_('about-me.title')}>
           <SectionText>
-            <UnsafeMarkdown markdown={_("about-me.detail")} />
+            <UnsafeMarkdown markdown={_('about-me.detail')} />
           </SectionText>
         </SectionBox>
-        <SectionBox title={_("tech-stack.title")}>
+        <SectionBox title={_('tech-stack.title')}>
           <ShadowBox>
-            <GridBox cells={_("tech-stack.stacks", { returnObjects: true })} />
+            <GridBox cells={_('tech-stack.stacks', { returnObjects: true })} />
           </ShadowBox>
           <SectionText>
-            <UnsafeMarkdown markdown={_("tech-stack.detail")} />
+            <UnsafeMarkdown markdown={_('tech-stack.detail')} />
           </SectionText>
         </SectionBox>
-        <SectionBox title={_("work-exp.title")}>
+        <SectionBox title={_('work-exp.title')}>
           <TimeLine items={timelineItems} />
         </SectionBox>
         <footer>
